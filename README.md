@@ -1,2 +1,2 @@
 # yamanobori
-mountain hiking
+This is a website about mountain hiking
