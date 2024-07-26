@@ -1,0 +1,604 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+ul {
+    padding: 0;
+    margin: 0;
+}
+li {
+    list-style-type: none;
+}
+h2 {
+    z-index: 130; 
+    text-align:center;
+    padding-top: 30px;
+    font-size: 2em;
+    color:aliceblue;
+}
+a {
+    text-decoration: none;
+    color: rgb(9, 114, 146);
+}
+header a {
+  text-decoration: none;
+  color:  aliceblue;
+}
+p {
+  text-decoration: none;
+  color: rgb(147, 212, 231);
+}
+
+/* ********************* NAVBAR ************************* */
+header {
+  position: absolute;
+  width: 100%;
+  height: 4vh;
+  top: 0;
+  left: 0;
+  background: transparent;
+}
+nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  position: sticky;
+}
+.toggle {
+  display: none;
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+}
+.menu li a {
+  color: aliceblue;
+}
+.menu li a:hover {
+  text-shadow: 3px 3px 10px aliceblue, 0 0 1em aliceblue, 0 0 0.2em green ;
+}
+.logo {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 500;
+  float: left;
+  color:aliceblue;
+}
+
+/* ******************************** IMAGE PRINCIPALE **************************** */
+#imagePrincipaleAlpes {
+  z-index: 125;
+  padding-top: 1px;
+  background: url(MEDIA/DSC-0915.jpg) no-repeat fixed 90% 70%;
+  background-size: cover;
+  height: 600px;
+}
+h1 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+  color:aliceblue;
+  font-size: 4em;
+  margin-top: 5px;
+  text-shadow: 1px 3px 20px #309df7;
+}
+#premierTrait {
+  height: 2px;
+  width: 25%;
+  margin: -3px auto;
+  background-color: aliceblue;
+  box-shadow: 1px 3px 2px color black;
+}
+h3 {
+  text-align: center;
+  margin-top: 2px;
+  color:aliceblue;
+  font-size: 1em;
+  text-shadow: 1px 3px 2px color black;
+}
+@media all and (max-width: 500px) {
+  header {
+    background: none;
+  }
+  h1 {
+    font-size: 3em;
+  }
+  .toggle {
+    z-index: 101;
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    position: relative;
+    color: aliceblue;
+  }
+  .logo {
+    z-index: 101;
+    position: relative;
+  }
+  .ouvrir {
+    display: block;
+  }
+  .toggle .fermer {
+    display: none;
+  }
+  .open .ouvrir {
+    display: none;
+  }
+  .open .fermer {
+    display: block;
+  }
+  .menu {
+    position :absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 42vh;
+    background: #072a40;
+    flex-direction: column ;
+    padding: 1.5rem;
+    justify-content: space-around;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+  }
+  .menu li a {
+    font-size: 1.3rem;
+  }
+  .open .menu {
+    transform: translateX(0);
+  }
+}
+
+/* ******************************* PRESENTATION *************************************** */
+#presentation {
+  background-color: #309df7;
+  padding-top: 10px 0 10px 0;
+  height: 600px;
+}
+#titreCarte {
+  padding: 20% 0 0 0;
+  text-align: center;
+  position: relative;
+  color:aliceblue;
+  text-shadow: 1px 3px 20px aliceblue;
+}
+#carteAlpes {
+  z-index: 89;
+  display : flex ;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  bottom: -5px;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  height: 370px;
+  border: 2px solid darkcyan;
+}
+@media all and (max-width: 500px) {
+  #titreCarte {
+    padding: 30% 0 0 0;
+  }
+  #imagePrincipaleAlpes {
+    padding-top: 1px;
+    height: 630px;
+  }
+  #carteAlpes {
+    top: 1px;
+    height: 370px;
+  }
+  #titreCarte {
+    padding: 35% 0 0 0;
+  }
+}
+
+/* ****************************** Cartograhie et parcours ********************************* */
+#parcours {
+  height: 680px;
+  background-color: #072a40;
+  padding: 15px 2%;
+} 
+#parcours h2 {
+  padding-top: 35px;
+  padding-bottom : 20px;
+  text-shadow: 1px 3px 20px aliceblue;
+}
+/* creation icones perso (divIcon) sur la carte avec leaflet */
+.div-icon-tresdur {
+  width: 20px;
+  height: 20px;
+  border-radius: 50% 50% 50% 0;
+  background: black;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -15px 0 0 -15px;
+}
+/* // to draw white circle */
+.div-icon-tresdur::after {
+  content: 'TD';
+  width: 24px;
+  height: 24px;
+  margin: 3px 0 0 3px;
+  background: #fff;
+  position: absolute;
+  border-radius: 50%;
+}
+/* // to align icon */
+.div-icon-tresdur i {
+  position: absolute;
+  width: 22px;
+  font-size: 18px;
+  left: 0;
+  right: 0;
+  margin: 10px auto;
+  text-align: center;
+}
+.div-icon-dur {
+  width: 20px;
+  height: 20px;
+  border-radius: 50% 50% 50% 0;
+  background: red;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -15px 0 0 -15px;
+}
+/* // to draw white circle */
+.div-icon-dur::after {
+  content: 'D';
+  width: 24px;
+  height: 24px;
+  margin: 3px 0 0 3px;
+  background: #fff;
+  position: absolute;
+  border-radius: 50%;
+}
+/* // to align icon */
+.div-icon-dur i {
+  position: absolute;
+  width: 22px;
+  font-size: 18px;
+  left: 0;
+  right: 0;
+  margin: 10px auto;
+  text-align: center;
+}
+.div-icon-moyen {
+  width: 20px;
+  height: 20px;
+  border-radius: 50% 50% 50% 0;
+  background: orange;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -15px 0 0 -15px;
+}
+/* // to draw white circle */
+.div-icon-moyen::after {
+  content: 'M';
+  width: 24px;
+  height: 24px;
+  margin: 3px 0 0 3px;
+  background: #fff;
+  position: absolute;
+  border-radius: 50%;
+}
+/* // to align icon */
+.div-icon-moyen i {
+  position: absolute;
+  width: 22px;
+  font-size: 18px;
+  left: 0;
+  right: 0;
+  margin: 10px auto;
+  text-align: center;
+}
+.div-icon-moyenfacile {
+  width: 20px;
+  height: 20px;
+  border-radius: 50% 50% 50% 0;
+  background: yellow;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -15px 0 0 -15px;
+}
+/* // to draw white circle */
+.div-icon-moyenfacile::after {
+  content: 'MF';
+  width: 24px;
+  height: 24px;
+  margin: 3px 0 0 3px;
+  background: #fff;
+  position: absolute;
+  border-radius: 50%;
+}
+/* // to align icon */
+.div-icon-moyenfacile i {
+  position: absolute;
+  width: 22px;
+  font-size: 18px;
+  left: 0;
+  right: 0;
+  margin: 10px auto;
+  text-align: center;
+}
+.div-icon-facile {
+  width: 20px;
+  height: 20px;
+  border-radius: 50% 50% 50% 0;
+  background: green;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -15px 0 0 -15px;
+}
+/* // to draw white circle */
+.div-icon-facile::after {
+  content: 'F';
+  width: 24px;
+  height: 24px;
+  margin: 3px 0 0 3px;
+  background: #fff;
+  position: absolute;
+  border-radius: 50%;
+}
+/* // to align icon */
+.div-icon-facile i {
+  position: absolute;
+  width: 22px;
+  font-size: 18px;
+  left: 0;
+  right: 0;
+  margin: 10px auto;
+  text-align: center;
+}
+.div-icon-tresfacile {
+  width: 20px;
+  height: 20px;
+  border-radius: 50% 50% 50% 0;
+  background: rgb(111, 247, 111);
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -15px 0 0 -15px;
+}
+/* // to draw white circle */
+.div-icon-tresfacile::after {
+  content: 'TF';
+  width: 24px;
+  height: 24px;
+  margin: 3px 0 0 3px;
+  background: #fff;
+  position: absolute;
+  border-radius: 50%;
+}
+/* // to align icon */
+.div-icon-tresfacile i {
+  position: absolute;
+  width: 22px;
+  font-size: 18px;
+  left: 0;
+  right: 0;
+  margin: 10px auto;
+  text-align: center;
+}
+/* ========================= G-R-I-D =====================*/
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(400px, auto);
+  gap:10px;
+}
+.grid-item1 {
+  z-index:98;
+  grid-column: 1;
+  grid-row: 1;
+  background: #076e0c;
+  padding: 1em;
+  color: rgb(255, 255, 255);
+  text-align: start;
+  cursor: pointer;
+}
+.grid-item2 {
+  z-index:98;
+  grid-column: 2;
+  grid-row: 1;
+  background: #044207;
+  padding: 1em;
+  color: rgb(255, 255, 255);
+  text-align: start;
+  cursor: pointer;
+}
+.grid-item3 {
+  z-index:98;
+  grid-column: 3;
+  grid-row: 1;
+  background: #022704;
+  padding: 1em;
+  color: rgb(255, 255, 255);
+  text-align: start;
+  cursor: pointer;
+}
+h4 {
+  text-align: center;
+  color:aliceblue;
+  font-size: 1.2em;
+}
+
+.grid-item1:hover {
+  background: rgb(11, 0, 39);
+  transition: 0.3s ease-in-out;
+}
+.grid-item2:hover {
+  background: rgb(11, 0, 39);
+  transition: 0.3s ease-in-out;
+}
+.grid-item3:hover {
+  background: rgb(11, 0, 39);
+  transition: 0.3s ease-in-out;
+}
+
+/* =======LISTES DEROULANTES=========*/
+div ul {
+  padding: 0;
+  margin: 0;
+    position: relative;
+}
+div ul li {
+  display:block;
+  line-height: 20px;
+  padding: 10px 15px 0 3px;
+  color: red;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+div a {
+  display:block;
+	padding: 0 2px;	
+  margin-top: 7px;
+    line-height: 20px;
+	text-decoration:none;
+  border-radius: 40px;
+  font-size: 1.2em;
+}
+div a:hover { 
+  background-color: orange; 
+  text-align: center;
+  font-weight: bold;
+}
+/* Hide Dropdowns by Default */
+div ul ul {
+  display: none;
+	position: relative; 
+  left : 10px;
+	top: -10px; /* the height of the main div */
+}
+/* Display Dropdowns and sub-Dropdowns on Hover */
+div ul li:hover > ul {
+  display: inherit;
+}
+
+/* partie TACTILE (on cible le touchstart sur "content" qui correspond à la classe ".dropdown-content") */
+@media all and (max-width: 500px) {
+  .gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
+    grid-auto-rows: minmax(100px, auto);
+    gap:10px;
+  }
+  .grid-item1 {
+    background: rgb(11, 0, 39);
+    grid-column: 1;
+    grid-row: 1;
+    padding: 1em;
+    text-align: start;
+    cursor: pointer;
+  }
+  .grid-item2 {
+    background: rgb(11, 0, 39);
+    grid-column: 1;
+    grid-row: 2;
+    padding: 1em;
+    text-align: start;
+    cursor: pointer;
+  }
+  .grid-item3 {
+    background: rgb(11, 0, 39);
+    grid-column: 1;
+    grid-row: 3;
+    padding: 1em;
+    text-align: start;
+    cursor: pointer;
+  }
+  .menuDropdown {
+    display: block;
+    background-color: transparent;
+    padding: 6px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    line-height: 20px;
+    padding: 0 1px 0 3px;
+    font-size: 0.8em;
+  }
+  .dropdown-content {
+    z-index: 135;
+    display: none;
+    position: relative;
+    min-width: 180px;
+    border-radius: 6px;
+    box-shadow: 0px 6px 10px 0px aliceblue;
+  }
+  .dropdown-content a {
+    z-index: 140;
+    color: rgb(9, 114, 146);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-content p {
+    z-index: 140;
+    padding: 2px 2px;
+    display: block;
+  }
+  .show {
+    display: block;
+  }
+}
+
+/* ************************************** FOOTER ****************************** */
+footer {
+  z-index:97;
+  background-color: #309df7;
+  padding: 20px 0 10px 0;
+  text-align: center;
+}
+#ressources {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 180px;
+  height: auto;
+  background-color: orange;
+  border-radius: 20px;
+}
+footer h2 {
+  text-shadow: 1px 3px 20px aliceblue;
+}
+footer a {
+  font-size: 0.7rem;
+}
+footer div a:hover { 
+  background-color: #072a40;
+  border-radius: 20px;
+  margin-top: 0px;
+}
+#copyright {
+  margin-bottom: 2px;
+  padding: 1%;
+  width: 70%;
+  text-align: left;
+  color: aliceblue;
+}
