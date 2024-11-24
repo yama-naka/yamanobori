@@ -56,7 +56,7 @@ nav {
   z-index: 100;
   position: sticky;
 }
-.toggle {
+.burger {
   display: none;
 }
 .menu {
@@ -77,12 +77,15 @@ nav {
   float: left;
   color:aliceblue;
 }
+header div a:hover { 
+  background-color: #e6411b; 
+}
 
 /* ******************************** IMAGE PRINCIPALE **************************** */
 #imagePrincipaleAlpes {
   z-index: 125;
   padding-top: 1px;
-  background: url(MEDIA/DSC-0915.jpg) no-repeat fixed 90% 70%;
+  background: url(images/DSC-0915.JPG) no-repeat fixed 90% 70%;
   background-size: cover;
   height: 600px;
 }
@@ -115,7 +118,7 @@ h3 {
   h1 {
     font-size: 3em;
   }
-  .toggle {
+  .burger {
     z-index: 101;
     display: block;
     font-size: 2rem;
@@ -130,7 +133,7 @@ h3 {
   .ouvrir {
     display: block;
   }
-  .toggle .fermer {
+  .burger .fermer {
     display: none;
   }
   .open .ouvrir {
@@ -145,9 +148,9 @@ h3 {
     left: 0;
     width: 100%;
     height: 42vh;
-    background: #072a40;
+    background: rgb(11, 0, 39);
     flex-direction: column ;
-    padding: 1.5rem;
+    padding: 2.2rem;
     justify-content: space-around;
     align-items: center;
     transform: translateX(-100%);
@@ -161,11 +164,12 @@ h3 {
   }
 }
 
-/* ******************************* PRESENTATION *************************************** */
+/* ******************************* PRESENTATION et CARTE *************************************** */
 #presentation {
-  background-color: #309df7;
-  padding-top: 10px 0 10px 0;
+  background: linear-gradient(180deg, rgb(11, 0, 39) 5%, #3c7ddf 2%, aliceblue 6%);
+  padding-top: 10px 0 6px 0px;
   height: 600px;
+  overflow: hidden;
 }
 #titreCarte {
   padding: 20% 0 0 0;
@@ -181,40 +185,30 @@ h3 {
   align-items: flex-end;
   position: relative;
   bottom: -5px;
-  left: 5%;
-  right: 5%;
-  width: 90%;
-  height: 370px;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  height: 80px;
   border: 2px solid darkcyan;
 }
 @media all and (max-width: 500px) {
   #titreCarte {
-    padding: 30% 0 0 0;
+    padding: 30% 0 2% 0;
   }
   #imagePrincipaleAlpes {
     padding-top: 1px;
     height: 630px;
   }
   #carteAlpes {
+    positio: relative;
     top: 1px;
     height: 370px;
-  }
-  #titreCarte {
-    padding: 35% 0 0 0;
+    left: 7%;
+    right: 7%;
+    width: 86%;
   }
 }
 
-/* ****************************** Cartograhie et parcours ********************************* */
-#parcours {
-  height: 680px;
-  background-color: #072a40;
-  padding: 15px 2%;
-} 
-#parcours h2 {
-  padding-top: 35px;
-  padding-bottom : 20px;
-  text-shadow: 1px 3px 20px aliceblue;
-}
 /* creation icones perso (divIcon) sur la carte avec leaflet */
 .div-icon-tresdur {
   width: 20px;
@@ -313,7 +307,7 @@ h3 {
   width: 20px;
   height: 20px;
   border-radius: 50% 50% 50% 0;
-  background: yellow;
+  background: #fcef00;
   position: absolute;
   transform: rotate(-45deg);
   left: 50%;
@@ -402,6 +396,28 @@ h3 {
   margin: 10px auto;
   text-align: center;
 }
+
+/* *************************************** PARCOURS ************************************ */
+#parcours {
+  height: 580px;
+  background-color: rgb(11, 0, 39);
+  padding: 15px 2%;
+} 
+#parcours h2 {
+  padding-top: 35px;
+  padding-bottom : 20px;
+  text-shadow: 3px 3px 10px aliceblue, 0 0 1em aliceblue, 0 0 0.2em green ;
+}
+
+@media all and (max-width: 500px) {
+  #parcours {
+    height: 760px;
+  } 
+  #parcours h2 {
+    padding: 20% 0 2% 0;
+  }
+}
+
 /* ========================= G-R-I-D =====================*/
 .gridContainer {
   display: grid;
@@ -413,7 +429,8 @@ h3 {
   z-index:98;
   grid-column: 1;
   grid-row: 1;
-  background: #076e0c;
+  overflow: auto;
+  background: #3fc7bc;
   padding: 1em;
   color: rgb(255, 255, 255);
   text-align: start;
@@ -423,7 +440,8 @@ h3 {
   z-index:98;
   grid-column: 2;
   grid-row: 1;
-  background: #044207;
+  overflow: auto;
+  background: #7ADCB4;
   padding: 1em;
   color: rgb(255, 255, 255);
   text-align: start;
@@ -433,7 +451,8 @@ h3 {
   z-index:98;
   grid-column: 3;
   grid-row: 1;
-  background: #022704;
+  overflow: auto;
+  background: #00D082;
   padding: 1em;
   color: rgb(255, 255, 255);
   text-align: start;
@@ -442,6 +461,11 @@ h3 {
 h4 {
   text-align: center;
   color:aliceblue;
+  font-size: 1.2em;
+  text-shadow: 1px 3px 10px rgb(11, 0, 39);
+}
+
+p {
   font-size: 1.2em;
 }
 
@@ -467,35 +491,48 @@ div ul {
 div ul li {
   display:block;
   line-height: 20px;
-  padding: 10px 15px 0 3px;
-  color: red;
+  padding: 10px 5px 0 3px;
+  color: #e6411b;
   font-size: 0.8em;
   font-weight: bold;
 }
 div a {
   display:block;
-	padding: 0 2px;	
+  padding: 0 2px;	
   margin-top: 7px;
-    line-height: 20px;
-	text-decoration:none;
+  line-height: 20px;
+  text-decoration:none;
   border-radius: 40px;
   font-size: 1.2em;
 }
 div a:hover { 
-  background-color: orange; 
+  background-color: #fcef00; 
   text-align: center;
   font-weight: bold;
 }
 /* Hide Dropdowns by Default */
 div ul ul {
   display: none;
-	position: relative; 
+  position: relative; 
   left : 10px;
-	top: -10px; /* the height of the main div */
+  /* the height of the main div */
+  top: -10px; 
 }
 /* Display Dropdowns and sub-Dropdowns on Hover */
 div ul li:hover > ul {
   display: inherit;
+}
+/* Hide Dropdowns by Default */
+div ul ul div {
+  display: none;
+	position: relative; 
+}
+.drop-details:hover .description {
+  display: inherit;
+  top: 10;
+  left: 5%;
+  padding: 0;
+  z-index: 200;
 }
 
 /* partie TACTILE (on cible le touchstart sur "content" qui correspond à la classe ".dropdown-content") */
@@ -503,13 +540,15 @@ div ul li:hover > ul {
   .gridContainer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
-    grid-auto-rows: minmax(100px, auto);
+    grid-auto-rows: minmax(100px, 210px);
     gap:10px;
   }
   .grid-item1 {
     background: rgb(11, 0, 39);
     grid-column: 1;
     grid-row: 1;
+    background: #3fc7bc;
+    overflow: auto;
     padding: 1em;
     text-align: start;
     cursor: pointer;
@@ -518,6 +557,8 @@ div ul li:hover > ul {
     background: rgb(11, 0, 39);
     grid-column: 1;
     grid-row: 2;
+    background: #7ADCB4;
+    overflow: auto;
     padding: 1em;
     text-align: start;
     cursor: pointer;
@@ -526,6 +567,8 @@ div ul li:hover > ul {
     background: rgb(11, 0, 39);
     grid-column: 1;
     grid-row: 3;
+    background: #00D082;
+    overflow: auto;
     padding: 1em;
     text-align: start;
     cursor: pointer;
@@ -549,28 +592,24 @@ div ul li:hover > ul {
     border-radius: 6px;
     box-shadow: 0px 6px 10px 0px aliceblue;
   }
-  .dropdown-content a {
-    z-index: 140;
-    color: rgb(9, 114, 146);
-    padding: 12px 16px;
-    text-decoration: none;
+  /* sous menu */
+  .dropdown-content, .description {
+    display: none;
+  }
+  .dropdown-content.show, .description.show {
     display: block;
   }
-  .dropdown-content p {
-    z-index: 140;
-    padding: 2px 2px;
-    display: block;
-  }
-  .show {
-    display: block;
+  .description p{
+    color: aliceblue; 
   }
 }
+
 
 /* ************************************** FOOTER ****************************** */
 footer {
   z-index:97;
-  background-color: #309df7;
-  padding: 20px 0 10px 0;
+  background-color: rgb(11, 0, 39);
+  padding: 30px 0 10px 0;
   text-align: center;
 }
 #ressources {
@@ -581,7 +620,7 @@ footer {
   flex-wrap: wrap;
   width: 180px;
   height: auto;
-  background-color: orange;
+  background-color: #fcef00;
   border-radius: 20px;
 }
 footer h2 {
@@ -591,7 +630,8 @@ footer a {
   font-size: 0.7rem;
 }
 footer div a:hover { 
-  background-color: #072a40;
+  background-color: rgb(11, 0, 39);
+  color:rgb(147, 212, 231);
   border-radius: 20px;
   margin-top: 0px;
 }
@@ -601,4 +641,36 @@ footer div a:hover {
   width: 70%;
   text-align: left;
   color: aliceblue;
+}
+
+/* **************************Bouton retour haut ****************************** */
+#back-to-top {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  bottom: 20px;
+  right: 20px;
+  background-color: #fcef00;
+  color: #007bff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  outline: none;
+  cursor: pointer;
+}
+#back-to-top:hover {
+  background-color: #007bff;
+  color: #fcef00;
+}
+html {scroll-behavior: smooth;
+}
+@media all and (max-width: 500px) {
+  #back-to-top {
+    bottom: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+  }
 }
