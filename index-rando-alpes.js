@@ -1,47 +1,78 @@
 // NAVBAR responsive
-let toggle = document.querySelector('.toggle');
-let body = document.querySelector('body');
+const burger = document.querySelector('.burger');
+const body = document.querySelector('body');
 
-toggle.addEventListener('click', function() {
+burger.addEventListener('click', function() {
     body.classList.toggle('open')
 })
 
-
+// Gestion menus déroulants
 document.addEventListener('DOMContentLoaded', () => {
-    const menudropdowns = document.querySelectorAll('.menuDropdown');
+    const menuDropdowns = document.querySelectorAll('.menuDropdown');
 
-    menudropdowns.forEach(menuDropdown => {
-        const menudrop = menuDropdown.querySelector('.drop');
+    menuDropdowns.forEach(menuDropdown => {
+        const menuDrop = menuDropdown.querySelector('.drop');
         const content = menuDropdown.querySelector('.dropdown-content');
 
-        menudrop.addEventListener('touchstart', (e) => {
+        // Gestion du tap sur le menu principal
+        menuDrop.addEventListener('touchstart', (e) => {
             e.preventDefault();
-            toggleDropdown(content);
-        });
-
-        // Fermer le menu si on touche en dehors
-        document.addEventListener('touchstart', (e) => {
-            if (!menuDropdown.contains(e.target)) {
-                content.classList.remove('show');
-            }
-        });
-
-        // Gérer les sélections dans le menu
+            e.stopPropagation();
+            closeAllDropdowns();
+            content.classList.toggle('show');
+        }, {passive: false});
+        // Gestion du tap sur les éléments du sous-menu
         content.addEventListener('touchstart', (e) => {
-            if (e.target.tagName === 'A') {
-                e.preventDefault();
-                console.log('Option sélectionnée:', e.target.textContent);
-                content.classList.remove('show');
+            e.stopPropagation();
+            if (e.target.closest('.drop-details')) {
+                const description=e.target.closest('.drop-details').querySelector('.description');
+                if (description) {
+                    e.preventDefault();
+                    description.classList.toggle('show');
+                }
             }
-        });
+        }, {passive: false});
     });
+
+    // Fermer tous les menus déroulants
+    function closeAllDropdowns() {
+        document.querySelectorAll('.dropdown-content, .description').forEach(el => {
+            el.classList.remove('show');
+        });
+    }
+
+    // Fermer les menus si on touche en dehors
+    document.addEventListener('touchstart', (e) => {
+        if (!e.target.closest('.menuDropdown')) {
+            closeAllDropdowns();
+        }
+    }, { passive: true });
+
+    // Empêcher le scroll lorsqu'on interagit avec le menu
+    document.querySelectorAll('.menuDropdown, .dropdown-content').forEach(el => {
+        el.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+        }, { passive: false });
+    });
+
 });
 
-function toggleDropdown(content) {
-    document.querySelectorAll('.dropdown-content').forEach(dc => {
-        if (dc !== content) {
-            dc.classList.remove('show');
-        }
+
+// BOUTON Retour haut
+// Attendre que le DOM soit chargé
+document.addEventListener('DOMContentLoaded', function() {
+    var backToTopButton = document.getElementById('back-to-top');
+    // Afficher le bouton quand l'utilisateur a défilé de 100px
+    window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopButton.style.display = 'block';
+    } else {
+        backToTopButton.style.display = 'none';
+    }
+    };
+    // Faire défiler vers le haut quand le bouton est cliqué
+    backToTopButton.addEventListener('click', function() {
+        document.body.scrollTop = 0; // Pour Safari
+        document.documentElement.scrollTop = 0; // Pour Chrome, Firefox, IE et Opera
     });
-    content.classList.toggle('show');
-}
+});
