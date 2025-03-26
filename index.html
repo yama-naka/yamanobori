@@ -491,21 +491,26 @@
       // Ajout de la carte OpenStreetMap
       var carte = L.map('carteAlpes', {
         touchZoom: 'center',
-        dragging: !L.Browser.mobile,
-        tap: !L.Browser.mobile
+        dragging: true,
+        tap: false,
+        bounceAtZoomLimits: false
       }).setView([45.726402, 6.528410], 9);
       L.tileLayer("https://{s}.tile.osm.org/{z}/{x}/{y}.png", {
         attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(carte);
-      if (L.Browser.mobile) {
-        carte.on('touchstart', function(e) {
-          if (e.touches.length !== 2) {
-            carte.dragging.disable();
-          } else {
-            carte.dragging.enable();
-          }
-        });
-      }
+      // Gestionnaire d'événements tactiles
+      carte.on('touchstart', function(e) {
+        if (e.touches.length === 1) {
+          e.preventDefault();
+          return false;
+        }
+      });
+      carte.on('touchmove', function(e) {
+        if (e.touches.length === 1) {
+          e.preventDefault();
+          return false;
+        }
+      });
 
       // source pour marker et infobulle https://leafletjs.com/reference.html#marker
       // source pour icon personnalisées https://www.geoapify.com/create-custom-map-marker-icon et https://leafletjs.com/reference.html#divicon
