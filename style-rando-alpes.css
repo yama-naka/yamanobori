@@ -200,12 +200,13 @@ h3 {
     height: 630px;
   }
   #carteAlpes {
-    positio: relative;
+    position: relative;
     top: 1px;
     height: 370px;
     left: 7%;
     right: 7%;
     width: 86%;
+    touch-action: pan-x pan-y pinch-zoom;
   }
 }
 
