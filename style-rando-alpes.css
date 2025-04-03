@@ -180,7 +180,7 @@ h3 {
 }
 #carteAlpes {
   z-index: 89;
-  display : flex ;
+  display: flex ;
   justify-content: center;
   align-items: flex-end;
   position: relative;
@@ -189,7 +189,7 @@ h3 {
   right: 10%;
   width: 80%;
   height: 80px;
-  border: 2px solid darkcyan;
+  border: 1px solid aliceblue;
 }
 @media all and (max-width: 500px) {
   #titreCarte {
