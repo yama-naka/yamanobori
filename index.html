@@ -499,18 +499,52 @@
       }).addTo(carte);
       // Gestionnaire d'événements tactiles
       if (L.Browser.mobile) {
-        carte.on('touchstart touchmove', function(e) {
+        let isPinching = false;
+        let startDistance = 0;
+        let startCenter = null;
+        carte.on('touchstart', function(e) {
           if (e.touches.length === 2) {
+            isPinching = true;
+            startDistance = getDistance(e.touches[0], e.touches[1]);
+            startCenter = getCenter(e.touches[0], e.touches[1]);
             carte.dragging.enable();
           } else {
+            isPinching = false;
             carte.dragging.disable();
           }
         });
-        carte.on('touchend', function() {
-          carte.dragging.enable();
+        carte.on('touchmove', function(e) {
+          if (isPinching && e.touches.length === 2) {
+            let currentDistance = getDistance(e.touches[0], e.touches[1]);
+            let currentCenter = getCenter(e.touches[0], e.touches[1]);
+            // Gérer le zoom
+            let zoomDelta = currentDistance / startDistance;
+            if (Math.abs(zoomDelta - 1) > 0.1) {
+              carte.setZoom(carte.getZoom() * zoomDelta);
+              startDistance = currentDistance;
+            }
+            // Gérer le déplacement
+            carte.panBy([currentCenter.x - startCenter.x, currentCenter.y - startCenter.y]);
+            startCenter = currentCenter;
+          }
+        });
+        carte.on('touchend', function(e) {
+          isPinching = false;
+          carte.dragging.disable();
         });
       }
-        
+      function getDistance(touch1, touch2) {
+        let dx = touch1.clientX - touch2.clientX;
+        let dy = touch1.clientY - touch2.clientY;
+        return Math.sqrt(dx * dx + dy * dy);
+      }  
+      function getCenter(touch1, touch2) {
+        return {
+          x: (touch1.clientX + touch2.clientX) / 2,
+          y: (touch1.clientY + touch2.clientY) / 2
+        };
+      }
+      
       // source pour marker et infobulle https://leafletjs.com/reference.html#marker
       // source pour icon personnalisées https://www.geoapify.com/create-custom-map-marker-icon et https://leafletjs.com/reference.html#divicon
 
