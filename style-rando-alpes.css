@@ -183,12 +183,12 @@ h3 {
   display: flex ;
   justify-content: center;
   align-items: flex-end;
-  position: relative;
-  bottom: -5px;
+  position: absolute;
+  bottom: 300px;
   left: 10%;
   right: 10%;
   width: 80%;
-  height: 80px;
+  height: 40px;
   border: 1px solid aliceblue;
 }
 @media all and (max-width: 500px) {
