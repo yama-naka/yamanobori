@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <title>Vanoise</title>
+
+    <link rel="stylesheet" href="style-rando-vanoise.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+    <!-- import bibliothèque LEAFLET et sa feuille de style. -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="index-rando-vanoise.js"defer></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- import logos FontAwsome -->
+    <script src="https://kit.fontawesome.com/92be4b0265.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="index-montagnes.html">Yamanami</a>
+        </div>
+        <ul class="menu">
+          <li><a href="index.html">Les Alpes</a></li>
+          <li><a href="#aFaire">Idées randos</a></li>
+          <li><a href="#aPreparer">Randos à préparer</a></li>
+          <li><a href="#sommets">Carto</a></li>
+        </ul>
+        <div class="burger">
+          <!-- icons "burger" et "croix" de FontAwsome -->
+          <i class="fa-solid fa-bars ouvrir"></i>
+          <i class="fa-solid fa-xmark fermer"></i>
+        </div>
+      </nav>
+      <div id="imagePrincipaleVanoise">
+        <h1>Vanoise</h1>
+        <h3>Quelque part dans le Parc Naturel</h3>
+      </div>
+    </header>
+  
+    <section id="parcours">
+      <div class="container">
+        <h2 id="aFaire">Idées randonnées</h2>
+        <div class="flexContainer1">
+          <div class="miniCard">
+            <h4>Mont Jovet 2558m et Roc du Bécoin 2594m</h4>
+            <a href="#jovet"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Pointe des Chardes</h4>
+            <a href="#chardes"></a> <!--voir pour renvoi vers marker sur carte --> 
+          </div>
+          <div class="miniCard">
+            <h4>Roche des Chèvres</h4>
+            <a href="#chevres"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Col du Plan Séry 2609m et Tête Rouge 2653m</h4> 
+            <a href="#sery"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Grand Tuf du Plan Séry 2813m</h4> 
+            <a href="#tuf"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Tour de la Pointe de la Vallaisonnay 2762m</h4>
+            <a href="#tourVallaisonnay"></a> <!--voir pour renvoi vers marker sur carte -->  
+          </div>
+          <div class="miniCard">
+            <h4>Pointe de la Vallaisonnay 3020m</h4> 
+            <a href="#vallaisonnay"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Pointe de la Vallaisonnay 3020m et Roche Noire 2931m</h4>
+            <a href="#vallaisonnayRochenoire"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Roche Noire de la Vallaisonnay 2931m</h4>
+            <a href="#rochenoire"></a> <!--voir pour renvoi vers marker sur carte --> 
+          </div>
+          <div class="miniCard">
+            <h4>Sous le Dôme des Nants 3200m</h4>
+            <a href="#nants"></a>  
+          </div>
+          <div class="miniCard">
+            <h4>Dôme des Pichères 3324m</h4>
+            <a href="#picheres"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Les Planus 2800m</h4> 
+            <a href="#planus"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Becca Motta 3042m</h4>
+            <a href="#becca"></a> 
+          </div>
+          <div class="miniCard">
+            <h4>Refuge du Grand Bec 2405m, col des Galinettes 2720m</h4>
+            <a href="#bec"></a> 
+          </div>
+          <div class="miniCard">
+            <h4>Pointe de Leschaux 2653m</h4>
+            <a href="#leschaux"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Cascade de la Vuzelle 1670m et Mont Chevrier 2038m</h4>
+            <a href="#vuzelle"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Col de la Vanoise 2522m</h4>
+            <a href="#vanoise"></a> <!--voir pour renvoi vers marker sur carte --> 
+          </div>
+          <div class="miniCard">
+            <h4>Roc du Tambour 2636m et lac de la Valette 2475m</h4>
+            <a href="#tambour"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Pic de la Vieille Femme 2739m</h4>
+            <a href="#femme"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Pointe de l’Observatoire 3016m</h4>
+            <a href="#observatoire"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Col de Chavière 2796m et Tête de Chavière 2992m</h4>
+            <a href="#chaviere"></a> <!--voir pour renvoi vers marker sur carte --> 
+          </div>
+          <div class="miniCard">
+            <h4>Lacs de Polset 2730m, col du Grand Infernet 2838m, lacs des Eaux Noires 2760m</h4>
+            <a href="#polset"></a> <!--voir pour renvoi vers marker sur carte --> 
+          </div>
+          <div class="miniCard">
+            <h4>Roc du Soufre 2940m et col du Soufre 2819m</h4>
+            <a href="#soufre"></a> <!--voir pour renvoi vers marker sur carte --> 
+          </div>
+          <div class="miniCard">
+            <h4>Pointe des Fonds 3021m</h4>
+            <a href="#fonds"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Roc des Eaux Noires 2994m par le Col Rouge 2730m</h4>
+            <a href="#eaux"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Mont Coua 2869m par le Col Rouge 2730m</h4>
+            <a href="#coua"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Petit Mont Blanc 2680m</h4>
+            <a href="#blanc"></a> <!--voir pour renvoi vers marker sur carte --> 
+          </div>
+          <div class="miniCard">
+            <h4>Rocher de Plassa 2836m</h4>
+            <a href="#plassa"></a>
+          </div>
+        </div> 
+        <h2 id="aPreparer">Les randonnées à préparer</h2>
+        <div class="flexContainer2">
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="observatoire">Pointe de l’Observatoire 3016m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/observatoire.jpg" alt="pic Observatoire"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = M</p>
+              <p>- 15km</p>
+              <p>- 5h15</p>
+              <p>- Parking = F : hameau des Prioux</p>
+              <p>- Balisage = MF ; après passerelle sur ruisseau du Rosoire disparition du sentier, pierrier jusqu'au final</p>
+              <p>- Difficultés = aucune</p>
+              <p>- D+ = 1266</p>
+              <p>- Remarque : le plus facile des 3000m. Possible contourner les 2 névés dans ascension finale du col d’Aussois</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="jovet">Mont Jovet 2558m et Roc du Bécoin 2594m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/jovet.jpg" alt="mont Jovet"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = F</p>
+              <p>- 12km</p>
+              <p>- 5h</p>
+              <p>- Parking = F : 800m après village de la Cour au lieu-dit "Pont du Ruisseau du Jovet"</p>
+              <p>- Balisage = F ; Panneaux et sentiers bien visibles sur la montée. Retour en partie hors sentier mais dans sol type prairie super dégagé sans dévers important</p>
+              <p>- Difficultés = juste quelques passages aériens sur Crête des Etroits</p>
+              <p>- D+ = 1180</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="picheres">Dôme des Pichères 3324m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/picheres.jpg" alt="dôme des Pichères"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = D</p>
+              <p>- 17km</p>
+              <p>- 8-9h</p>
+              <p>- Parking = F : parking du Laisonnay-d’en-bas</p>
+              <p>- Balisage = M ; balisé jusqu’au col du Plan Séry, puis hors sentier (quelques cairns, pas toujours cohérents). GPS tracé à la main</p>
+              <p>- Difficultés = long, mais sans difficultés majeures. Recherche d’itinéraire entre Grand Tuf du Plan Séry et glacier des Pichères. Pentes raides entre 3000 et 3100m.</p>
+              <p>- D+ = 1650</p>
+              <p>- Remarques : s'arrêter au pied du glacier vers 3200m. Retour : descente par même itinéraire (si on le retrouve), sinon 1000 voies possibles entre base de l’arête sud-est et Grand Tuf du Plan Séry (toujours en point de mire). Panneaux indiquent Refuge de Plaisance à 2h et Col du Plan Séry à 3h30</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="nants">Sous le Dôme des Nants 3200m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/nants.jpg" alt="dôme des Nants"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = D</p>
+              <p>- 13 à 16km</p>
+              <p>- 6-8h</p>
+              <p>- Parking = F : après les Prioux et avant le Pont de la Pêche</p>
+              <p>- Balisage = M ; en grande partie hors-sentier. Sentiers et panneaux suivant variantes + utiliser tracé de ski de rando IGN et sentiers à moutons. Après col du Vallonnet, pierriers, mais vers 3100m vague sente jusqu'au sommet</p>
+              <p>- Difficultés = aucun passage technique ni vraiment exposé</p>
+              <p>- D+ = 1500 à 1800</p>
+              <p>- Remarque : plusieurs variantes possibles, boucles avec variantes ou A/R. On s'arrêtera au pied du Dôme des Nants, vers 3200m, après ça peut être trop enneigé ou glissant. Pas de difficultés même si brouillard</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="becca">Becca Motta 3042m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/beccamotta.jpg" alt="Becca Motta"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = TD</p>
+              <p>- 9km</p>
+              <p>- 6h</p>
+              <p>- Parking = F : au hameau Le Bois, en face refuge du Bois</p>
+              <p>- Balisage = M : 2ème partie hors sentier après refuge des Gouilles</p>
+              <p>- Difficultés = Progression à vue sur raides pentes, dans gros blocs, puis en éboulis, souvent chercher les meilleurs passages. Quelques dalles inclinées un peu exposées pour rejoindre arête au point coté 2623m</p>
+              <p>- D+ = 1580</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="eaux">Roc des Eaux Noires 2994m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/eauxnoires.jpg" alt="Roc des Eaux Noires"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = D</p>
+              <p>- 16km</p>
+              <p>- 6h30</p>
+              <p>- Parking = F : après les Prioux et avant le Pont de la Pêche</p>
+              <p>- Balisage = M : Panneaux, balisage et sentiers bien visibles. Hors sentier vers le Roc des Eaux Noires</p>
+              <p>- Difficultés = Roc des Eaux Noires : hors sentier, recherche des meilleurs passages entre éboulis, gros blocs parfois instables, rocher délité, dalles et lapiaz. Quelques passages assez raides et techniques ou il faudra mettre les mains. Crête finale pas très longue mais étroite et un peu exposée</p>
+              <p>- D+ = 1260</p>
+              <p>- Remarques : Col Rouge : sentier avec passages raides mais pas de difficultés techniques</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="vallaisonnay">Pointe de la Vallaisonnay 3020m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/vallaisonnay.jpg" alt="pointe de la Vallaisonnay"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = D</p>
+              <p>- 14km</p>
+              <p>- 7 à 8h</p>
+              <p>- Parking = F : parking du Laisonnay-d’en-bas</p>
+              <p>- Balisage = M : balisé jusqu’au Refuge de Plaisance puis aucun pour le sommet et la descente par Plan Séry</p>
+              <p>- Difficultés = tracé dessiné à la main ; Savoir s’orienter et choisir le meilleur itinéraire dans zones très caillouteuses. A éviter par brouillard. Final dans éboulis et rochers brisés mais sans difficultés. Descente raide et assez escarpée vers Plan Séry si on prend cette option de retour, et plus long en km et temps</p>
+              <p>- D+ = 1500</p>
+              <p>- Remarques : simple A/R contrairement aux autres itinéraires du Vallaisonnay qui sont en boucle. OPTION descente par Plan Séry au retour : plus long en temps et distance (données inconnues)</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="largestCard">
+              <div class="imgBox">
+                <h4 id="vallaisonnayRochenoire">Pointe de la Vallaisonnay 3020m et Roche Noire 2931m</h4>
+                <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+                <img src="images/vallaisonnayrochenoire.jpg" alt="pointe de la Vallaisonnay et Roche Noire"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+              </div>
+              <div class="content-card">
+                <p>- Indice = D</p>
+                <p>- 15.6-17.8km // 18-19km</p>
+                <p>- 7h boucle par Col de Grassaz // 7h30-8h boucle par Col de Roche Noire (4h30 à 5h30 par trailers conseillant +0h30 pour le quidam)</p>
+                <p>- Parking = F : parking du Laisonnay-d’en-bas</p>
+                <p>- Balisage = M : jusqu’au Refuge de Plaisance en sens horaire, jusqu'au col de Grassaz dans sens anti-horaire, puis aucun vers sommets</p>
+                <p>- Difficultés = dénivelé, longueur, absence de balisage pendant une grande partie du parcours, recherche d’itinéraire, mais aucune difficulté technique. Avoir pied assuré pour pente sous Col de Roche Noire</p>
+                <p>- D+ = 1500</p>
+                <p>- Remarques : 2 GRANDES VARIANTES : par COL DE ROCHE NOIRE ou par COL DE GRASSAZ avec boucles en sens horaire ou anti-horaire. SI ON FAIT PAS Roche Noire, on gagne 800m, et des roches instables en moins, et Pointe de la Vallaisonnay plus intéressante. Névés dans la montée vers les 2 sommets</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="planus">Les Planus 2800m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/planus.jpg" alt="les planus"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = M</p>
+              <p>- 14km</p>
+              <p>- 6h</p>
+              <p>- Parking = F : parking du Laisonnay-d’en-bas</p>
+              <p>- Balisage = F ; panneaux jusqu’à la chapelle de la Glière</p>
+              <p>- Difficultés = à partir de moraine, pente très raide. Sentier monte raide sur la crête parfois délitée, vide bien présent sur la droite, moindre sur la gauche : faux pas interdit</p>
+              <p>- D+ = 1250</p>
+              <p>- Remarque : Face Nord, donc peut y avoir encore pas mal de neige en été</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="grandTuf">Grand Tuf du Plan Séry ou Aiguille du Val Genêt 2813m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/grandtuf.jpg" alt="Grand Tuf du Plan Séry"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = F</p>
+              <p>- 13km</p>
+              <p>- 5h30-6h</p>
+              <p>- Parking = F : parking du Laisonnay-d’en-bas</p>
+              <p>- Balisage = F : panneaux et sentiers bien visibles ; hors sentier vers le Grand Tuf</p>
+              <p>- Difficultés = non, sauf quelques passages bien raides hors sentier et quelques éboulis</p>
+              <p>- D+ = 1250</p>
+              <p>- Remarque : panneaux indiquent Refuge de Plaisance à 2h et Col du Plan Séry à 3h30</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="plassa">Rocher de Plassa 2836m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/plassa.jpg" alt="Rocher de Plassa"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = M</p>
+              <p>- 10km</p>
+              <p>- 5h30</p>
+              <p>- Parking = M : avant les Prioux, parking 10aine de places, juste avant le Pont de Gerlon (1592m)</p>
+              <p> Balisage = F : Panneaux et sentiers toujours bien visibles. Hors sentier pour l’accès au sommet</p>
+              <p>- Difficultés = peu, mais dans montée au sommet par l’arête et sur crête sommitale, beaucoup de gaz par endroits</p>
+              <p>- D+ = 1250</p>
+            </div>
+          </div> 
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="tambour">Roc du Tambour 2636m et lac de la Valette 2475m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/tambour.jpg" alt="Roc du Tambour"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = F</p>
+              <p>- 12km</p>
+              <p>- 5h</p>
+              <p>- Parking = F : hameau des Prioux</p>
+              <p>- Balisage = F : Panneaux et sentiers bien visibles</p>
+              <p>- Difficultés = aucune</p>
+              <p>- D+ = 1120</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="chevres">Roche des Chèvres 2761m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/chevres.jpg" alt="Roche des Chèvres"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = F</p>
+              <p>- 11km</p>
+              <p>- 5h30</p>
+              <p>- Parking = F : parking du Laisonnay-d’en-bas</p>
+              <p>- Balisage = M : panneaux et sentiers bien visibles jusqu’au pied de la Roche des Chèvres</p>
+              <p>- Difficultés = moindre vers le sommet</p>
+              <p>- D+ = 1230</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="sery">Col du Plan Séry 2609m et Tête Rouge 2653m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/sery.jpg" alt="Col du Plan Séry"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = F</p>
+              <p>- 12km</p>
+              <p>- 5h30</p>
+              <p>- Parking = F : parking du Laisonnay-d’en-bas</p>
+              <p>- Balisage = F : Panneaux et sentiers bien visibles</p>
+              <p>- Difficultés = r.a.s.</p>
+              <p>- D+ = 1120</p>
+            </div>
+          </div> 
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="coua">Mont Coua 2869m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/coua.jpg" alt="Mont Coua"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = D</p>
+              <p>- 16,5km</p>
+              <p>- 6h30-7h</p>
+              <p>- Parking = F : après les Prioux et avant le Pont de la Pêche</p>
+              <p>- alisage = M : panneaux, balisage et sentiers bien visibles. Hors sentier du col Rouge au Mont Coua</p>
+              <p>- Difficultés = entre col Rouge et sommet : recherche des meilleurs passages entre éboulis, gros blocs parfois instables, rocher délité, dalles et lapiaz. Quelques passages ou il faudra parfois mettre les mains</p>
+              <p>- D+ = 1250</p>
+              <p>- Remarques : Col Rouge : sentier avec passages raides mais pas de difficultés techniques</p>
+            </div>
+          </div>  
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="femme">Pic de la Vieille Femme 2739m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/femme.jpg" alt="Pic de la Vieille Femme"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card"> 
+              <p>- Indice = F</p>
+              <p>- 12km</p>
+              <p>- connu QUE EN MONTEE : 3h50h</p>
+              <p>- Parking = F : hameau des Prioux</p>
+              <p>- Balisage = F ; panneaux absents pour Pic de la Vieille Femme et accès aux lacs</p>
+              <p>- Difficultés = r.a.s</p>
+              <p>- D+ = 1150m</p>
+              <p>- Remarque : possible de faire que 10.2km en ne faisant pas la boucle par le lac</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="vuzelle">Cascade de la Vuzelle 1670m et Mont Chevrier 2038m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/vuzelle.jpg" alt="Cascade de la Vuzelle"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = TF</p>
+              <p>- 8km</p>
+              <p>- 4h</p>
+              <p>- Parking = F : après le Planay (1,5km) plusieurs places de stationnement sur la gauche en bordure de route, lieu-dit la Novaz, panneau départ rando (1200m)</p>
+              <p>- Balisage = F : quelques panneaux, balisage rouge pour Cascade de la Vuzelle et bleu pour Mont Chevrier, sentiers globalement bien visibles</p>
+              <p>- Difficultés = aucune</p>
+              <p>- D+ = 900</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="bec">Refuge du Grand Bec 2405m, col des Galinettes 2720m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/galinettes.jpg" alt="col des Galinettes"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = MF</p>
+              <p>- 12km</p>
+              <p>- 5h</p>
+              <p>- Parking = M : après le Planay prendre à gauche direction Chambéranger. Poursuivre vers Plan Fournier (1723m). Quelques places de parking après le village</p>
+              <p>- Balisage = F : panneaux et sentiers bien visibles (ou cairnés) sur tout le parcours</p>
+              <p>- Difficultés = dernière portion vers Col des Galinettes équipée de chaines, avec quelques passages assez aériens sur de petites vires</p>
+              <p>- D+ = 1100</p>
+              <p>- Remarques : col des Galinettes pas nommé sur IGN, panneau sur place avec altitude erronée 2745m (réel 2720m). Raccourci possible au retour vers Plan Fournier (tracé orange sur la carte)</p>
+            </div>
+          </div> 
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="leschaux">Pointe de Leschaux 2653m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/leschaux.jpg" alt="Pointe de Leschaux"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = MF</p>
+              <p>- 12km</p>
+              <p>- 6h30</p>
+              <p>- Parking = M : après le Planay prendre à gauche direction Chambéranger. Poursuivre vers Plan Fournier (1723m). Quelques places de parking après le village</p>
+              <p>- Balisage = F : Balisage, panneaux, cairns et sentiers bien visibles</p>
+              <p>- Difficultés = aucune, mais vigilance entre col de Leschaux et sommet</p>
+              <p>- D+ = 1270</p>
+              <p>- Remarque : variante par les Fontanettes, plus aérien, mais sur 2 premiers tiers omniprésence télésièges et canons à neige : Parking = F : juste au dessus de l’Auberge des Fontanettes ; 11.5km ; 5h30 ; 1115 D+ ; Balisage blanc/rouge partiel, panneaux et sentiers bien visibles</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="fonds">Pointe des Fonds 3021m</h4>
+              <a href="#fonds"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/fonds.jpg" alt="Pointe des Fonds"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = D</p>
+              <p>- 17km</p>
+              <p>- 10h</p>
+              <p>- Parking = F : hameau des Prioux, et aller se garer aux Ruelles (4.6 km - 1777m)</p>
+              <p>- Balisage = M : Rouge et Blanc sur GR55. Jusqu’au Col Rouge bon sentier "cairné". Après Col Rouge une trace au départ, puis plus rien</p>
+              <p>- Difficultés = longueur. Descente Col des Fonds vers les Creux de Chavière peut être délicate même si sec. Si terrain humide ou brouillard, oublier cette solution</p>
+              <p>- D+ = 1300</p>
+              <p>- Remarques : Vigilence sur l'arête avant sommet même si pas trop technique et pas trop exposé. Attention aux cailloux que font rouler chamois et bouquetins</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="map">
+      <div id="titreCarte">
+        <h2 id="sommets">Sommets</h2>
+      </div>
+      <!-- Le conteneur de notre carte (contrainte pour la taille dans le CSS) -->
+      <div id="carteVanoise"></div>
+    </section> 
+
+
+    <section id="cielBlanc">
+    </section>
+
+
+    <footer>
+      <h2>Ressources</h2>
+      <div id="ressources">
+        <div class="lien">
+          <a href="https://www.altituderando.com" target="_blank">Altituderando</a>
+        </div>
+        <div class="lien">
+          <a href="https://www.visorando.com" target="_blank">Visorando</a>
+        </div>
+        <div class="lien">
+          <a href="https://randos.info" target="_blank">Randos.info</a>
+        </div>
+        <div class="lien">
+          <a href="https://randonneessportives.over-blog.com" target="_blank">randonneessportives.over-blog</a>
+        </div>
+        <div class="lien">
+          <a href="https://www.fred-38.fr" target="_blank">Fred38</a>
+        </div>
+      </div>
+      <div id="copyright">
+        <span>yam@naka 2025</span>
+      </div>
+    </footer>
+
+    <!-- Bouton de retour haut -->
+    <button id="back-to-top" title="Retour en haut de page">↑</button>
+    
+
+
+    <script defer>
+      // Ajout de la carte OpenStreetMap
+      var carte = L.map('carteVanoise', {
+        dragging: true,
+        tap: false
+      }).setView([45.4561840, 6.6997560], 9);
+      L.tileLayer("https://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(carte);
+      // Gestionnaire d'événements tactiles personnalisé
+      carte.on('touchstart', function(e) {
+        if (e.touches.length === 1) {
+          e.preventDefault();
+        }
+      });
+      carte.on('touchmove', function(e) {
+        if (e.touches.length === 1) {
+          e.preventDefault();
+        }
+      });
+
+      // icone sur Mont Jovet
+      var myIcon = L.divIcon({className: 'div-icon-facile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.4947375, 6.6392951], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Mont Jovet');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Mont Jovet 2558m');
+      marker.openPopup();
+
+      // icone sur Pointe des Chardes
+      var myIcon = L.divIcon({className: 'div-icon-dur', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.4694988, 6.7816624], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Pointe des Chardes');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('APointe des Chardes 2919m');
+      marker.openPopup();
+
+      // icone sur Roche des Chèvres
+      var myIcon = L.divIcon({className: 'div-icon-facile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.461037,6.806457], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Roche des Chèvres');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Roche des Chèvres 2761m');
+      marker.openPopup();
+
+      // icone sur Col du Plan Séry 
+      var myIcon = L.divIcon({className: 'div-icon-facile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.469731,6.819406], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Col du Plan Séry et Tête Rouge');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Col du Plan Séry 2609m et Tête Rouge 2653m');
+      marker.openPopup();
+
+      // icone sur Grand Tuf du Plan Séry 
+      var myIcon = L.divIcon({className: 'div-icon-moyenfacile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.4738124, 6.8114256], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Grand Tuf du Plan Séry');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Grand Tuf du Plan Séry 2813m');
+      marker.openPopup();
+
+      // icone sur Pointe de la Vallaisonnay
+      var myIcon = L.divIcon({className: 'div-icon-dur', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.4578547, 6.8176505], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Pointe de la Vallaisonnay');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Pointe de la Vallaisonnay 3020m');
+      marker.openPopup();
+
+      // icone sur Roche Noire de la Vallaisonnay
+      var myIcon = L.divIcon({className: 'div-icon-dur', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.4534621, 6.8113215], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Roche Noire de la Vallaisonnay');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Roche Noire de la Vallaisonnay 2931m');
+      marker.openPopup();
+
+      // icone sur Dôme des Nants
+      var myIcon = L.divIcon({className: 'div-icon-tresdur', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.3258696, 6.7414594], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Sous le Dôme des Nants');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Sous le Dôme des Nants 3200m');
+      marker.openPopup();
+
+      // icone sur Dôme des Pichères
+      var myIcon = L.divIcon({className: 'div-icon-tresdur', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.4920351, 6.7982857], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Dôme des Pichères');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Dôme des Pichères 3324m');
+      marker.openPopup();
+
+      // icone sur Les Planus
+      var myIcon = L.divIcon({className: 'div-icon-moyen', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.418058,6.837535], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Les Planus');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Les Planus 2800m');
+      marker.openPopup();
+
+      // icone sur Becca Motta
+      var myIcon = L.divIcon({className: 'div-icon-tresdur', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.4329599, 6.7492604], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Becca Motta');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Becca Motta 3042m');
+      marker.openPopup();
+
+      // icone sur Refuge du Grand Bec
+      var myIcon = L.divIcon({className: 'div-icon-moyenfacile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.4165664, 6.7328305], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Refuge du Grand Bec et col des Galinettes');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Refuge du Grand Bec 2405m et col des Galinettes 2720m');
+      marker.openPopup();
+
+      // icone sur Pointe de Leschaux
+      var myIcon = L.divIcon({className: 'div-icon-moyenfacile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.4041710, 6.7385350], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Pointe de Leschaux');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Pointe de Leschaux 2653m');
+      marker.openPopup();
+
+      // icone sur Cascade de la Vuzelle
+      var myIcon = L.divIcon({className: 'div-icon-tresfacile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.4110257, 6.7246767], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Cascade de la Vuzelle');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Cascade de la Vuzelle 1670m');
+      marker.openPopup();
+
+      // icone sur Col de la Vanoise
+      var myIcon = L.divIcon({className: 'div-icon-moyenfacile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.3922985, 6.7911031], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Col de la Vanoise');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Col de la Vanoise 2522m');
+      marker.openPopup();
+
+      // icone sur Roc du Tambour
+      var myIcon = L.divIcon({className: 'div-icon-facile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.360558,6.731370], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Roc du Tambour');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Roc du Tambour 2636m');
+      marker.openPopup();
+
+      // icone sur Pic de la Vieille Femme 
+      var myIcon = L.divIcon({className: 'div-icon-facile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.3486495, 6.7270615], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Pic de la Vieille Femme');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Pic de la Vieille Femme 2739m');
+      marker.openPopup();
+
+      // icone sur Pointe de l’Observatoire
+      var myIcon = L.divIcon({className: 'div-icon-moyen', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.2908908, 6.6851397], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Pointe de l’Observatoire');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Pointe de l’Observatoire 3016m');
+      marker.openPopup();
+
+      // icone sur Col de Chavière 
+      var myIcon = L.divIcon({className: 'div-icon-dur', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.2706274, 6.6576948], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Col de Chavière et Tête de Chavière');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Col de Chavière 2796m et Tête de Chavière 2992m');
+      marker.openPopup();
+
+      // icone sur Lacs de Polset
+      var myIcon = L.divIcon({className: 'div-icon-moyen', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.3026774, 6.6402766], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Lacs de Polset, col du Grand Infernet, lacs des Eaux Noires');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Lacs de Polset 2730m, col du Grand Infernet 2838m, lacs des Eaux Noires 2760m');
+      marker.openPopup();
+
+      // icone sur Roc du Soufre 
+      var myIcon = L.divIcon({className: 'div-icon-dur', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.3028320, 6.6378603], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Roc du Soufre');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Roc du Soufre 2940m');
+      marker.openPopup();
+
+      // icone sur Pointe des Fonds 
+      var myIcon = L.divIcon({className: 'div-icon-tresdur', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.3073342, 6.6462089], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Pointe des Fonds');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Pointe des Fonds 3021m');
+      marker.openPopup();
+
+      // icone sur Roc des Eaux Noires
+      var myIcon = L.divIcon({className: 'div-icon-dur', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.3125458, 6.6523784], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Roc des Eaux Noires');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Roc des Eaux Noires 2994m');
+      marker.openPopup();
+
+      // icone sur Mont Coua 
+      var myIcon = L.divIcon({className: 'div-icon-dur', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.3187822, 6.6433402], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Mont Coua');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Mont Coua 2869m');
+      marker.openPopup();
+
+      // icone sur Petit Mont Blanc
+      var myIcon = L.divIcon({className: 'div-icon-moyenfacile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.3560594, 6.6864648], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Petit Mont Blanc');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Petit Mont Blanc 2680m');
+      marker.openPopup();
+
+      // icone sur Rocher de Plassa 
+      var myIcon = L.divIcon({className: 'div-icon-moyen', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.3709508, 6.6863614], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Rocher de Plassa');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Rocher de Plassa 2836m');
+      marker.openPopup();
+
+    </script>
+    
+
+
+  </body>
