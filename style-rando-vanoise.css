@@ -70,7 +70,7 @@ header div a:hover {
   z-index: 125;
   padding-top: 1px;
   /* Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) */
-  background-image: url("images/DSC_1036.JPG") no-repeat fixed 90% 70%;
+  background: url("images/DSC_1036.JPG") no-repeat fixed 90% 70%;
   background-size: cover;
   height: 2600px;
 }
