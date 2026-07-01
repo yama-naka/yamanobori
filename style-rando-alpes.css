@@ -63,7 +63,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 500px;
+  width: 1000px;
 }
 .menu li a {
   color: aliceblue;
