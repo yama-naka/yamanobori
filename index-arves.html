@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <title>Arves</title>
+
+    <link rel="stylesheet" href="style-rando-arves.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+    <!-- import bibliothèque LEAFLET et sa feuille de style. -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="index-rando-arves.js"defer></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- import logos FontAwsome -->
+    <script src="https://kit.fontawesome.com/92be4b0265.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="index-montagnes.html">Yamanami</a>
+        </div>
+        <ul class="menu">
+          <li><a href="index.html">Les Alpes</a></li>
+          <li><a href="#aFaire">Idées randos</a></li>
+          <li><a href="#aPreparer">Randos à préparer</a></li>
+          <li><a href="#sommets">Carto</a></li>
+          <li><a href="index-cerces.html">Cerces</a></li>
+          <li><a href="index-grandesRousses.html">Grandes Rousses</a></li>
+          <li><a href="index-vanoise.html">Vanoise</a></li>
+          <li><a href="index-realisees.html">Randos réalisées</a></li>
+        </ul>
+        <div class="burger">
+          <!-- icons "burger" et "croix" de FontAwsome -->
+          <i class="fa-solid fa-bars ouvrir"></i>
+          <i class="fa-solid fa-xmark fermer"></i>
+        </div>
+      </nav>
+      <div id="imagePrincipaleArves">
+        <h1>Arves</h1>
+        <h3>LEs 3 pICs</h3>
+      </div>
+    </header>
+  
+    <section id="parcours">
+      <div class="container">
+        <h2 id="aFaire">Idées randonnées</h2>
+        <div class="flexContainer1">
+          <div class="miniCard">
+            <h4>Crêt Aigu 2329m</h4>
+            <a href="#cretAigu"></a>
+          </div> 
+          <div class="miniCard">
+            <h4>Basse du Gerbier 2581m</h4>
+            <a href="#gerbier"></a>
+          </div>   
+          <div class="miniCard">
+            <h4>Basse du Gerbier 2592m, Gros Crey 2576m, Crey Aigu 2329m</h4>
+            <a href="#grosCrey"></a>
+          </div>                  
+          <div class="miniCard">
+            <h4>Casse Massion 2430m</h4>
+            <a href="#massion"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Pointe des Chaudannes 2519m, Tête d’Albiez le Vieux 2470m et Casse Massion 2433m</h4>
+            <a href="#chaudannes"></a> <!--voir pour renvoi vers marker sur carte --> 
+          </div>
+          <div class="miniCard">
+            <h4>Aiguille de l’Épaisseur 3230m</h4>
+            <a href="#epaisseur"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Roche du Bonhomme 2891m</h4> 
+            <a href="#bonhomme"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Cime des Torches ou Grand Agnelin 2958m</h4> 
+            <a href="#torches"></a>
+          </div>
+        </div> 
+        <h2 id="aPreparer">Les randonnées à préparer</h2>
+        <div class="flexContainer2">
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="cretAigu">Crêt Aigu 2329m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/cretAigu.jpg" alt="Crêt Aigu"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = TF<p>
+              <p>- 8km<p>
+              <p>- 4h<p>
+              <p>- Parking = F : Parking du Relais (implicite dans descriptif altituderando)<p>
+              <p>- Balisage = jaune<p>
+              <p>- Difficultés = aucune<p>
+              <p>- D+ = 478<p>
+              <p>- Remarque : Crêt Aigu s'écrit aussi Crey Aigu<p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="gerbier">Basse du Gerbier 2581m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/gerbier.jpg" alt="Basse du Gerbier"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = TF<p>
+              <p>- 12km<p>
+              <p>- 5h<p>
+              <p>- Parking = F : Parking du Relais (implicite dans descriptif altituderando)<p>
+              <p>- Balisage = panneaux, peinture jaune, absent sur une partie du retour<p>
+              <p>- Difficultés = aucune<p>
+              <p>- D+ 720<p>
+              <p>- Remarque : néant<p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="gerbier">Basse du Gerbier 2592m, Gros Crey 2576m, Crey Aigu 2329m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/grosCrey.jpg" alt="Gros Crey"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = MF<p>
+                <p>- 14km<p> 
+                <p>- 5h<p>
+                <p>- Parking = F : Parking du Relais (implicite dans descriptif altituderando)<p>
+                <p>- Balisage = M : plus rien après Basse du Gerbier, mais chemin de nouveau marqué après Crey Aigu<p>
+                <p>- Difficultés = pas de balisage et hors sentier entre Basse du Gerbier et Crey Aigu. Passage de l'éperon rocheux entre Basse du Gerbier et Gros Crey pas à la portée de tous, possible de contourner<p>
+                <p>- D+ 1000<p>
+                <p>- Remarque : aucune difficulté en condition sèche. Crey Aigu s'écrit aussi Crêt Aigu<p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="massion">Casse Massion 2430m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/massion.jpg" alt="Casse Massion"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = F</p>
+              <p>- 11km</p>
+              <p>- 5h</p>
+              <p>- Parking = F : place de la fontaine à Albiez-le-Jeune</p>
+              <p>- Balisage = MF ; chemins, sauf sur crêtes où chemins pas toujours marqués</p>
+              <p>- Difficultés = Montée forte, régulière, sans difficultés, du lieu-dit le Lart à la Croix d’Albiez. De Croix d’Albiez au pied de Casse Massion, rando en crêtes. Quelques passages en dévers sur des lauzes. Montée finale forte<p>
+              <p>- D+ 1000<p>
+              <p>- Remarque : Au retour, vers cabane des Chasseurs, on peut changer de chemin par rapport à l’aller (ligne de crête ou à flanc)<p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="chaudannes">Pointe des Chaudannes 2519m, Tête d’Albiez le Vieux 2470m et Casse Massion 2433m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/chaudannes.jpg" alt="pointe de Chaudannes"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = F</p>
+              <p>- 10.7km</p>
+              <p>- 4h30</p>
+              <p>- Parking = F : StJean de Maurienne, station des Karellis, au-dessus de Montricher, parking ouest<p>
+              <p>- Balisage = F : poteaux avec marques jaunes sur fond vert, panneaux, marques bleues et blanches à partir du Col des Têtes<p>
+              <p>- Difficultés = néant<p>
+              <p>- D+ 950<p>
+              <p>- Remarque : remontées mécaniques souvent proches<p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="epaisseur">Aiguille de l’Épaisseur 3230m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/epaisseur.jpg" alt="aiguille de l'Epaisseur"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = D<p>
+              <p>- 15km<p>
+              <p>- 7h<p>
+              <p>- Parking = F : parking de Bonnenuit sous l'altiport<p>
+              <p>- Balisage = F : sentier et balisage marques jaune bien visibles jusqu'au sommet<p>
+              <p>- Difficultés = essentiellement dénivelée. Que des gros blocs rocheux, schistes et éboulis après refuge jusqu'au sommet<p>
+              <p>- D+ 1560<p>
+              <p>- Remarque : assez populaire. Compter 4h15 de montée<p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="bonhomme">Roche du Bonhomme 2891m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/bonhomme.jpg" alt="Roche du Bonhomme"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = D<p>
+              <p>- 13.7km<p>
+              <p>- 7h<p>
+              <p>- Parking = F : juste après pont sur la Valloirette, parking à gauche de la route (parking de la Borgé)<p>
+              <p>- Balisage = D : en grande partie hors sentier<p>
+              <p>- Difficultés = les 2 passages de contournement de la crête sont importants à repérer pour éviter passages délicats<p>
+              <p>- D+ 1450<p>
+              <p>- Remarque : marche sur sentiers jusqu’au Plan de la Laurent puis hors sentier. Variante poossible entre départ et ruisseau de Pémian<p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="torches">Cime des Torches ou Grand Agnelin 2958m</h4>
+              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/torches.jpg" alt="Cime des Torches"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = TD<p>
+              <p>- 20km<p>
+              <p>- 7 à 9h<p>
+              <p>- Parking = F : hameau d'Entraigues, entrée ou petit parking un peu après<p>
+              <p>- Balisage = aucun, de vieux panneaux en bois dans le bas. Nombreuses sentes. Hors sentier du col au sommet<p>
+              <p>- Difficultés = descente longue<p>
+              <p>- D+ 1680<p>
+              <p>- Remarque : pas mal de changements de sentes et de sentiers. Névé possible sur col de l'Agnelin<p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="map">
+      <div id="titreCarte">
+        <h2 id="sommets">Sommets</h2>
+      </div>
+      <!-- Le conteneur de notre carte (contrainte pour la taille dans le CSS) -->
+      <div id="carteArves"></div>
+    </section> 
+
+
+    <section id="cielBlanc">
+    </section>
+
+
+    <footer>
+      <h2>Ressources</h2>
+      <div id="ressources">
+        <div class="lien">
+          <a href="https://www.altituderando.com" target="_blank">Altituderando</a>
+        </div>
+        <div class="lien">
+          <a href="https://www.visorando.com" target="_blank">Visorando</a>
+        </div>
+        <div class="lien">
+          <a href="https://randos.info" target="_blank">Randos.info</a>
+        </div>
+        <div class="lien">
+          <a href="https://randonneessportives.over-blog.com" target="_blank">randonneessportives.over-blog</a>
+        </div>
+        <div class="lien">
+          <a href="https://www.fred-38.fr" target="_blank">Fred38</a>
+        </div>
+      </div>
+      <div id="copyright">
+        <span>yam@naka 2026</span>
+      </div>
+    </footer>
+
+    <!-- Bouton de retour haut -->
+    <button id="back-to-top" title="Retour en haut de page">↑</button>
+    
+
+
+    <script defer>
+      // Ajout de la carte OpenStreetMap
+      var carte = L.map('carteArves', {
+        dragging: true,
+        tap: false
+      }).setView([45.12727, 6.33643], 9);
+      L.tileLayer("https://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(carte);
+      // Gestionnaire d'événements tactiles personnalisé
+      carte.on('touchstart', function(e) {
+        if (e.touches.length === 1) {
+          e.preventDefault();
+        }
+      });
+      carte.on('touchmove', function(e) {
+        if (e.touches.length === 1) {
+          e.preventDefault();
+        }
+      });
+
+      // icone sur Crêt Aigu
+      var myIcon = L.divIcon({className: 'div-icon-tresfacile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.16397, 6.32355], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Crêt Aigu');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Crêt Aigu 2329m');
+      marker.openPopup();
+
+      // icone sur Basse du Gerbier
+      var myIcon = L.divIcon({className: 'div-icon-tresfacile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.13932, 6.33043], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Basse du Gerbier');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Basse du Gerbier 2581m');
+      marker.openPopup();
+
+      // icone sur Gros Crey
+      var myIcon = L.divIcon({className: 'div-icon-moyenfacile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.15508, 6.31830], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Gros Crey');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Gros Crey 2576m');
+      marker.openPopup();
+
+      // icone sur Casse Massion
+      var myIcon = L.divIcon({className: 'div-icon-facile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.21952, 6.37983], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Casse Massion');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Casse Massion 2430m');
+      marker.openPopup();
+
+      // icone sur Pointe des Chaudannes
+      var myIcon = L.divIcon({className: 'div-icon-facile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.20596, 6.38579], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Pointe des Chaudannes');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Pointe des Chaudannes 2519m');
+      marker.openPopup();
+
+      // icone sur Aiguille de l’Épaisseur
+      var myIcon = L.divIcon({className: 'div-icon-dur', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.13260, 6.35564], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Aiguille de l’Épaisseur');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Aiguille de l’Épaisseur 3230m');
+      marker.openPopup();
+
+      // icone sur Roche du Bonhomme
+      var myIcon = L.divIcon({className: 'div-icon-dur', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.16462, 6.36578], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Roche du Bonhomme');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Roche du Bonhomme 2891m');
+      marker.openPopup();
+
+      // icone sur Cime des Torches
+      var myIcon = L.divIcon({className: 'div-icon-tresdur', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.15108, 6.25028], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Cime des Torches');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Cime des Torches 2958m');
+      marker.openPopup();
+
+    </script>
+    
+
+
+  </body>
