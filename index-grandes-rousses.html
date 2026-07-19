@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <title>Grandes Rousses</title>
+
+    <link rel="stylesheet" href="style-rando-grandes-rousses.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+    <!-- import bibliothèque LEAFLET et sa feuille de style. -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="index-rando-grandes-rousses.js"defer></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- import logos FontAwsome -->
+    <script src="https://kit.fontawesome.com/92be4b0265.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="index-montagnes.html">Yamanami</a>
+        </div>
+        <ul class="menu">
+          <li><a href="index.html">Les Alpes</a></li>
+          <li><a href="#aFaire">Idées randos</a></li>
+          <li><a href="#aPreparer">Randos à préparer</a></li>
+          <li><a href="#sommets">Carto</a></li>
+          <li><a href="index-arves.html">Arves</a></li>
+          <li><a href="index-cerces.html">Cerces</a></li>
+          <li><a href="index-vanoise.html">Vanoise</a></li>
+          <li><a href="index-realisees.html">Randos réalisées</a></li>
+        </ul>
+        <div class="burger">
+          <!-- icons "burger" et "croix" de FontAwsome -->
+          <i class="fa-solid fa-bars ouvrir"></i>
+          <i class="fa-solid fa-xmark fermer"></i>
+        </div>
+      </nav>
+      <div id="imagePrincipaleGrandesRousses">
+        <h1>Grandes Rousses</h1>
+        <h3>Autour du glacier de Saint Sorlin</h3>
+      </div>
+    </header>
+  
+    <section id="parcours">
+      <div class="container">
+        <h2 id="aFaire">Idées randonnées</h2>
+        <div class="flexContainer1">
+          <div class="miniCard">
+            <h4>Crêt d’Ornon 2063m</h4>
+            <a href="#ornon"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Pointe de Roche Noire 2157m et le Grand Truc 2209m</h4>
+            <a href="#rocheNoire"></a> <!--voir pour renvoi vers marker sur carte --> 
+          </div>
+          <div class="miniCard">
+            <h4>Mont Charvin 2207m</h4>
+            <a href="#charvin"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Pointe du Corbier 2265m</h4> 
+            <a href="#Corbier"></a>
+          </div>
+          <div class="miniCard">
+            <h4>L’Ouillon 2431m</h4> 
+            <a href="#ouillon"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Grand Lac ou Lac Bramant 2448m, Lac Blanc 2473m et tour des Perrons</h4>
+            <a href="#bramant"></a> <!--voir pour renvoi vers marker sur carte -->  
+          </div>
+          <div class="miniCard">
+            <h4>Aiguille Rousse 2680m</h4> 
+            <a href="#rousse"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Cime de la Valette (2858m) et Mont Péaiaux (2958m)</h4>
+            <a href="#valette"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Glacier de Saint-Sorlin - Cabane des glaciologues 2700m et lac Nicolas 2380m</h4>
+            <a href="#sorlin"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Aiguille de Laisse ou Roc de la Balme (2879m)</h4>
+            <a href="#laisse"></a>  
+          </div>
+          <div class="miniCard">
+            <h4>Aiguille Noire 2997m</h4>
+            <a href="#aiguilleNoire"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Dôme de la Cochette 3041m</h4> 
+            <a href="#domeCochette"></a>
+          </div>
+          <div class="miniCard">
+            <h4>Cimes 3239m et Dôme 3041m de la Cochette</h4>
+            <a href="#cimesCochette"></a> 
+          </div>
+        </div> 
+        <h2 id="aPreparer">Les randonnées à préparer</h2>
+        <div class="flexContainer2">
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="ornon">Crêt d’Ornon 2063m</h4>
+              <a href="#ornon"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/ornon.jpg" alt="Crêt d’Ornon"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = MF<p>
+              <p>- 11km<p>
+              <p>- 4h<p>
+              <p>- Parking = F : se garer peu après pont vers la Chapelle St-Antoine (en face, a priori sur googlestreet)<p>
+              <p>- Balisage = M : peu de balisage et sentiers peu marqués<p>
+              <p>- Difficultés = topo wikiloc trouve rando difficile : franchissement du 1er ravin du Chausset délicat, celui des suivants semble franchement exposé, de petits glissements de terrain ayant décapé sol jusqu'au rocher qu'il vaut mieux ne pas expérimenter. Puis depuis dôme des Cristallières jusqu'au sommet marche dans hautes herbes<p>
+              <p>- D+ = 700<p>
+              <p>- Remarque : pour topo wikiloc plutôt une rando difficile<p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="rocheNoire">Pointe de Roche Noire 2157m et le Grand Truc 2209m</h4>
+              <a href="#rocheNoire"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/rocheNoire.jpg" alt="Pointe de Roche Noire et le Grand Truc"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = TF<p>
+              <p>- 8km<p>
+              <p>- 3h30<p>
+              <p>- Parking = F : Petit parking près de la chapelle des Chambeaux (1730m) ; Départ possible au Léard au bout de route goudronnée, mais 300m D+ en plus<p>
+              <p>- Balisage = F : panneaux + balises + sentiers bien visibles<p>
+              <p>- Difficultés = aucune<p>
+              <p>- D+ = 590<p>
+              <p>- Remarque : aucune<p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="charvin">Mont Charvin 2207m</h4>
+              <a href="#charvin"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/charvin.jpg" alt="Mont Charvin"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = TF<p>
+              <p>- 6km<p>
+              <p>- 3h30<p>
+              <p>- Parking = F : parking au centre du hameau<p>
+              <p>- Balisage = F : panneaux, balises, sentiers bien visibles<p>
+              <p>- Difficultés =  si humide : dans forêt très vite glissant et sur pentes raides avec la boue aussi<p>
+              <p>- D+ = 735<p>
+              <p>- Remarque : à éviter par temps humide. Variante en boucle : 7.5km, parking au sommet du hameau du Collet dans un virage, D+630, retour dans forêt de l’Outraz passages bien raides dont un très raviné, limite praticable : https://www.altituderando.com/Mont-Charvin-2207m-en-boucle-par-Saint-Jean-d-Arves-le-Collet<p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="corbier">Pointe du Corbier 2265m</h4>
+              <a href="#corbier"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/corbier.jpg" alt="Pointe du Corbier"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = TF<p>
+              <p>- 11km<p>
+              <p>- 4h30<p>
+              <p>- Parking = F : se garer dans le village de St-Sorlin<p>
+              <p>- Balisage = F : panneaux + marques jaunes<p>
+              <p>- Difficultés = aucune<p>
+              <p>- D+ = 800<p>
+              <p>- Remarque : variante depuis Col de la Croix de Fer ajoutant l’Ouillon 2431m : 13km, 5h, D+650 : https://www.altituderando.com/Pointe-du-Corbier-2265m-et-l-Ouillon-2431m-par-le-Col-de-la-Croix-de-Fer<p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="ouillon">Ouillon 2431m</h4>
+              <a href="#ouillon"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/ouillon.jpg" alt="Ouillon"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = TF<p>
+              <p>- 6km<p>
+              <p>- 2h<p>
+              <p>- Parking = F : parking du col de la Croix de Fer<p>
+              <p>- Balisage = F : panneaux + marques jaunes<p>
+              <p>- Difficultés = aucune<p>
+              <p>- D+ = 370<p>
+              <p>- Remarque : variante depuis Col du Glandon : 11km, 4h, D+570 : https://www.altituderando.com/L-Ouillon-2431m-par-le-Col-du-Glandon<p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="bramant">Grand Lac ou Lac Bramant 2448m, Lac Blanc 2473m</h4>
+              <a href="#bramant"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/bramant.jpg" alt="Grand Lac ou Lac Bramant et Lac Blanc"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = TF<p>
+              <p>- 12.6km<p>
+              <p>- 4h30<p>
+              <p>- Parking = F : parking du Col de la Croix de Fer<p>
+              <p>- Balisage = F : poteaux indicateurs et marques jaunes<p>
+              <p>- Difficultés = aucune<p>
+              <p>- D+ 600<p>
+              <p>- Remarque : plusieurs possibilités entre pistes et sentiers<p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="rousse">Aiguille Rousse 2680m</h4>
+              <a href="#rousse"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/rousse.jpg" alt="Aiguille Rousse"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = M<p>
+              <p>- 14.5km<p>
+              <p>- 5h<p>
+              <p>- Parking = F : parking du Col de la Croix de Fer<p>
+              <p>- Balisage = M : hors sentier après les lacs jusqu'au sommet<p>
+              <p>- Difficultés = toute fin de l’ascension : sommet se gravit d’abord par croupe herbeuse puis par des passages rocheux un peu plus raides (petits gradins et un couloir de cheminée facile : on utilise un peu les mains pour l’équilibre)<p>
+              <p>- D+ 800<p>
+              <p>- Remarque : difficulté moyenne en raison de la toute fin, 2nde pointe sommitale plus délicate<p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="valette">Cime de la Valette 2858m et Mont Péaiaux 2958m</h4>
+              <a href="#valette"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/valette.jpg" alt="Cime de la Valette et Mont Péaiaux"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = MD<p>
+              <p>- 18.2km<p>
+              <p>- 7h<p>
+              <p>- Parking = F : parkings du Col de la Croix de Fer<p>
+              <p>- Balisage = M : balisé jusqu'au pieds du glacier, puis hors sentier dans pentes caillouteuses assez raides<p>
+              <p>- Difficultés = 1ère antécime facile (Cime de la Valette), mais arête finale assez étroite et exposée et beaucoup de gaz pour accéder au sommet du Mont Péaiaux<p>
+              <p>- D+ 1100<p>
+              <p>- Remarque : surtout long. En période chaude, peut être très délicat de traverser torrents d'eaux de fonte du glacier : chercher itinéraire et ne pas avoir peur de se mouiller<p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="sorlin">Glacier de Saint-Sorlin - Cabane des glaciologues 2700m</h4>
+              <a href="#sorlin"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/sorlin.jpg" alt="Glacier de Saint-Sorlin - Cabane des glaciologues"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = M<p>
+              <p>- 22km ; 17.6km sans crochet vers Lac St Nicolas<p>
+              <p>- 7h30 ou 6h sans lac St Nicolas<p>
+              <p>- Parking = F : parkings du Col de la Croix de Fer<p>
+              <p>- Balisage = F : pistes et chemins jusqu'aux 2 barrages. Sentier discret mais balisé et cairné si on va au lac St Nicolas (chercher chemin sous refuge de l'Etendard en passant vers station de pompage, traverser une petite combe et se diriger vers petit pylône de la balise nivose bien visible, itinéraire balisé ensuite)<p>
+              <p>- Difficultés = aucune, sauf la distance<p>
+              <p>- D+ 1100 avec le lac St Nicolas<p>
+              <p>- Remarque : aucune<p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="laisse">Aiguille de Laisse ou Roc de la Balme 2879m</h4>
+              <a href="#laisse"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/laisse.jpg" alt="Aiguille de Laisse ou Roc de la Balme"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = MD<p>
+              <p>- 12.5km<p>
+              <p>- 6h au moins d'après un des topos<p>
+              <p>- Parking = F : parkings du Col de la Croix de Fer<p>
+              <p>- Balisage = M : piste menant au Refuge de l’Étendard et barrage, ensuite hors sentier<p>
+              <p>- Difficultés = montée un peu délicate dans blocs pour trouver point coté 2875 en crête<p>
+              <p>- D+ 900<p>
+              <p>- Remarque : s'aider en partie du topo plus détaillé : https://www.altituderando.com/Aiguille-de-Laisse-ou-Roc-de-la-Balme-2879m-Aiguille-Noire-2997m-et-Dome-de-la // Autre topo existant en débutant au Plan du Suel, mais sur un topo dans secteur il est dit en 2024 qu'alpage bloqué par une bergerie et enclos<p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBox">
+              <h4 id="aiguilleNoire">Aiguille Noire 2997m</h4>
+              <a href="#aiguilleNoire"></a> <!--PREVOIR renvoi vers marker sur carte-->
+              <img src="images/aiguilleNoire.jpg" alt="aiguilleNoire"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+            </div>
+            <div class="content-card">
+              <p>- Indice = TD<p>
+              <p>- 15.4km<p>
+              <p>- 7h<p>
+              <p>- Parking = F : parkings du Col de la Croix de Fer<p>
+              <p>- Balisage = M : chemins jusqu'aux 2 barrages puis suivre ruisseau et nombreux cairns, ensuite hors sentier blocs et arête<p>
+              <p>- Difficultés = Arête escarpée et par endroits aérienne, entre sommet de l’Aiguille de Laisse et base du pilier nord-ouest d’Aiguille Noire. Pente raide dans ce pilier (35 à 40°) sur une 60aine de mètres<p>
+              <p>- D+ 1200<p>
+              <p>- Remarque : topo cite casque et corde en matériel, mais pas l'air plus dangereux que d'autres randos du genre. Voir aussi topo complémentaire groupant topos d'Aiguille de Laisse, Aiguille Noire et Dome de la Cochette<p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="largestCard">
+              <div class="imgBox">
+                <h4 id="domeCochette">Dôme de la Cochette 3041m</h4>
+                <a href="#domeCochette"></a> <!--PREVOIR renvoi vers marker sur carte-->
+                <img src="images/domeCochette.jpg" alt="Dôme de la Cochette"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+              </div>
+              <div class="content-card">
+                <p>- Indice = TD<p>
+                <p>- 16.1km<p>
+                <p>- 7h à 9h<p>
+                <p>- Parking = F : parkings du Col de la Croix de Fer<p>
+                <p>- Balisage = M : chemins jusqu'aux 2 barrages, puis suivre ruisseau et nombreux cairns, ensuite hors sentier blocs et arête<p>
+                <p>- Difficultés = Arête escarpée, par endroits aérienne, entre sommet d’Aiguille de Laisse et base du pilier nord-ouest d’Aiguille Noire. Pente raide dans ce pilier (35 à 40°) sur 60m. Ressauts (gendarmes) à contourner pour accéder au pied du Dôme. Par lac de la Cochette, rampes raides voire vertigineuses et dalles en adhérence<p>
+                <p>- D+ 1150<p>
+                <p>- Remarque : prendre topo d'Aiguille Noire pour tracé et GPX, puis prendre fin du topo "Aiguille de Laisse ou Roc de la Balme (2879m), Aiguille Noire (2997m) et Dôme de la Cochette (3041m) par l’alpage du Suet"(non retenu car alpage fermé depuis 2024). Enfin voir https://www.altituderando.com/Aiguille-de-Laisse-ou-Roc-de-la-Balme-2879m-Aiguille-Noire-2997m-et-Dome-de-la --pour avoir tracé et GPX entre Aiguille Noire et Dôme de la Cochette, soit 700m A/R. Voir aussi topo complémentaire groupant topos d'Aiguille de Laisse, Aiguille Noire et Dome de la Cochette. Casque recommandé<p>
+              </div>
+            </div>            
+          </div>
+          <div class="card">
+            <div class="largestCard">
+              <div class="imgBox">
+                <h4 id="cimesCochette">Cimes 3239m et Dôme 3041m de la Cochette</h4>
+                <a href="#cimesCochette"></a> <!--PREVOIR renvoi vers marker sur carte-->
+                <img src="images/cimesCochette.jpg" alt="Cimes et Dôme de la Cochette"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+              </div>
+              <div class="content-card">
+                <p>- Indice = TD<p>
+                <p>- 17km<p>
+                <p>- au moins 9h<p>
+                <p>- Parking = F : parkings du Col de la Croix de Fer<p>
+                <p>- Balisage = M : chemins jusqu'au lac Tournant, puis sente peu marquée s'élevant rapidement, puis hors sentier, quelques cairns. Petit lac supérieur (2864m) dans pente précèdé de quelques marques rouges<p>
+                <p>- Difficultés = secteur assez raide mais pas dangereux, un peu malaisé car il faut parfois escalader quelques blocs. Entre blocs et pierriers, dans pentes souvent très raides, sans sentier ni cairn, en marchant à vue et visant toujours point le plus haut...qui ne sera jamais vraiment le bon sommet. A partir du petit lac orientation plus aisée. Ascension des derniers 100m moins impressionnante qu’elle n’en a l’air<p>
+                <p>- D+ 1100<p>
+                <p>- Remarque : Casque recommandé. Attention ! à partir du petit lac 2864m pentes peuvent être bien enneigées.
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="map">
+      <div id="titreCarte">
+        <h2 id="sommets">Sommets</h2>
+      </div>
+      <!-- Le conteneur de notre carte (contrainte pour la taille dans le CSS) -->
+      <div id="carteGrandesRousses"></div>
+    </section> 
+
+
+    <section id="cielBlanc">
+    </section>
+
+
+    <footer>
+      <h2>Ressources</h2>
+      <div id="ressources">
+        <div class="lien">
+          <a href="https://www.altituderando.com" target="_blank">Altituderando</a>
+        </div>
+        <div class="lien">
+          <a href="https://www.visorando.com" target="_blank">Visorando</a>
+        </div>
+        <div class="lien">
+          <a href="https://randos.info" target="_blank">Randos.info</a>
+        </div>
+        <div class="lien">
+          <a href="https://randonneessportives.over-blog.com" target="_blank">randonneessportives.over-blog</a>
+        </div>
+        <div class="lien">
+          <a href="https://www.fred-38.fr" target="_blank">Fred38</a>
+        </div>
+      </div>
+      <div id="copyright">
+        <span>yam@naka 2026</span>
+      </div>
+    </footer>
+
+    <!-- Bouton de retour haut -->
+    <button id="back-to-top" title="Retour en haut de page">↑</button>
+    
+
+
+    <script defer>
+      // Ajout de la carte OpenStreetMap
+      var carte = L.map('carteGrandesRousses', {
+        dragging: true,
+        tap: false
+      }).setView([45.12727, 6.33643], 9);
+      L.tileLayer("https://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(carte);
+      // Gestionnaire d'événements tactiles personnalisé
+      carte.on('touchstart', function(e) {
+        if (e.touches.length === 1) {
+          e.preventDefault();
+        }
+      });
+      carte.on('touchmove', function(e) {
+        if (e.touches.length === 1) {
+          e.preventDefault();
+        }
+      });
+
+      // icone sur Crêt d’Ornon
+      var myIcon = L.divIcon({className: 'div-icon-moyenfacile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.2017744, 6.2395625], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Crêt d’Ornon');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Crêt d’Ornon 2063m');
+      marker.openPopup();
+
+      // icone sur Pointe de Roche Noire
+      var myIcon = L.divIcon({className: 'div-icon-tresfacile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.2834738, 6.2698773], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Pointe de Roche Noire');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Pointe de Roche Noire 2157m');
+      marker.openPopup();
+
+      // icone sur Mont Charvin
+      var myIcon = L.divIcon({className: 'div-icon-tresfacile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.21762, 6.28459], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Mont Charvin');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Mont Charvin 2207m');
+      marker.openPopup();
+
+      // icone sur Pointe du Corbier
+      var myIcon = L.divIcon({className: 'div-icon-tresfacile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.23435, 6.24365], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Pointe du Corbier');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Pointe du Corbier 2265m');
+      marker.openPopup();
+
+      // icone sur Ouillon
+      var myIcon = L.divIcon({className: 'div-icon-tresfacile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.23958,6.21511], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Ouillon');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Ouillon 2431m');
+      marker.openPopup();
+
+      // icone sur Lac Bramant
+      var myIcon = L.divIcon({className: 'div-icon-tresfacile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.20006,6.17573], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Lac Bramant');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Lac Bramant 2448m');
+      marker.openPopup();
+
+      // icone sur Aiguille Rousse
+      var myIcon = L.divIcon({className: 'div-icon-moyen', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.19753,6.18054], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Aiguille Rousse');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Aiguille Rousse 2680m');
+      marker.openPopup();
+
+      // icone sur Cime de la Valette
+      var myIcon = L.divIcon({className: 'div-icon-moyen', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.16463, 6.18046], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Cime de la Valette');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Cime de la Valette 2858m');
+      marker.openPopup();
+
+      // icone sur Glacier de Saint-Sorlin
+      var myIcon = L.divIcon({className: 'div-icon-moyen', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.16994, 6.16396], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Glacier de Saint-Sorlin');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Glacier de Saint-Sorlin 2700m');
+      marker.openPopup();
+
+      // icone sur Aiguille de Laisse
+      var myIcon = L.divIcon({className: 'div-icon-moyen', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.18856, 6.16194], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Aiguille de Laissse');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Aiguille de Laisse 2879m');
+      marker.openPopup();
+
+      // icone sur Aiguille Noire
+      var myIcon = L.divIcon({className: 'div-icon-tresdur', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.18174, 6.16136], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Aiguille Noire');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Aiguille Noire 2997m');
+      marker.openPopup();
+
+      // icone sur Dôme de la Cochette
+      var myIcon = L.divIcon({className: 'div-icon-tresdur', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.17964, 6.15905], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Dôme de la Cochette');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Dôme de la Cochette 3041m');
+      marker.openPopup();
+
+      // icone sur Cimes et Dôme de la Cochette
+      var myIcon = L.divIcon({className: 'div-icon-tresdur', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.16830, 6.14937], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Cimes et Dôme de la Cochette');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Cimes 3239m et Dôme 3041m de la Cochette');
+      marker.openPopup();
+
+
+    </script>
+    
+
+
+  </body>
