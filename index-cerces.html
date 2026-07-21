@@ -27,7 +27,7 @@
           <li><a href="#aPreparer">Randos à préparer</a></li>
           <li><a href="#sommets">Carto</a></li>
           <li><a href="index-arves.html">Arves</a></li>
-          <li><a href="index-grandesRousses.html">Grandes Rousses</a></li>
+          <li><a href=""index-grandes-rousses.html"l">Grandes Rousses</a></li>
           <li><a href="index-vanoise.html">Vanoise</a></li>
           <li><a href="index-realisees.html">Randos réalisées</a></li>
         </ul>
@@ -49,11 +49,11 @@
         <div class="flexContainer1">
           <div class="miniCard">
             <h4>Pointe de la Sandonière 2925m</h4>
-            <a href="#sandoniere"></a> <!--voir pour renvoi vers marker sur carte --> 
+            <a href="#sandoniere"></a>
           </div>
           <div class="miniCard">
             <h4>Roche Noire 3067m</h4>
-            <a href="#rocheNoire"></a> <!--voir pour renvoi vers marker sur carte -->  
+            <a href="#rocheNoire"></a>
           </div>
         </div> 
         <h2 id="aPreparer">Les randonnées à préparer</h2>
@@ -61,8 +61,8 @@
           <div class="card">
             <div class="imgBox">
               <h4 id="sandoniere">Pointe de la Sandonière 2925m</h4>
-              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
-              <img src="images/sandoniere.jpg" alt="pointe Sandonière"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+              <a href="#marker"></a>
+              <img src="images/sandoniere.jpg" alt="pointe Sandonière">
             </div>
             <div class="content-card">
               <p>- Indice = MF</p>
@@ -78,8 +78,8 @@
           <div class="card">
             <div class="imgBox">
               <h4 id="rocheNoire">Roche Noire 3067m</h4>
-              <a href="#marker"></a> <!--PREVOIR renvoi vers marker sur carte-->
-              <img src="images/rocheNoire.jpg" alt="Roche Noire"> <!-- Adapter chemin de l'image du background suivant le répertoire de stockage de l'hébergeur (GITHUB) -->
+              <a href="#marker"></a>
+              <img src="images/rocheNoire.jpg" alt="Roche Noire">
             </div>
             <div class="content-card">
               <p>- Indice = D</p>
@@ -144,7 +144,7 @@
       var carte = L.map('carteCerces', {
         dragging: true,
         tap: false
-      }).setView([45.15599, 6.53948], 12);
+      }).setView([45.15599, 6.53948], 10);
       L.tileLayer("https://{s}.tile.osm.org/{z}/{x}/{y}.png", {
         attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(carte);
