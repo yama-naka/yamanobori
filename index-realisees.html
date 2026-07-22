@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <title>ça, c'est fait !</title>
+    <link rel="stylesheet" href="style-rando-realisees.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+    <!-- import bibliothèque LEAFLET et sa feuille de style. -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="index-realisees.js"defer></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- import logos FontAwsome -->
+    <script src="https://kit.fontawesome.com/92be4b0265.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="index-montagnes.html">Yamanami</a>
+        </div>
+        <ul class="menu">
+          <li><a href="index.html">Les Alpes</a></li>
+          <li><a href="index-arves.html">Arves</a></li>
+          <li><a href="index-cerces.html">Cerces</a></li>
+          <li><a href="index-grandes-rousses.html">Grandes Rousses</a></li>
+          <li><a href="index-vanoise.html">Vanoise</a></li>
+        </ul>
+        <div class="burger">
+          <!-- icons "burger" et "croix" de FontAwsome -->
+          <i class="fa-solid fa-bars ouvrir"></i>
+          <i class="fa-solid fa-xmark fermer"></i>
+        </div>
+      </nav>
+      <div id="imagePrincipaleRealisees">
+        <h3>ça, c'est fait !</h3>
+      </div>
+    </header>
+  
+
+    <section id="map">
+      <div id="titreCarte">
+        <h1 id="bandeauBlanc">Les balades</h1>
+      </div>
+      <!-- Le conteneur de notre carte (contrainte pour la taille dans le CSS) -->
+      <div id="carteRealisees"></div>
+    </section> 
+
+
+    <section id="cielBlanc">
+    </section>
+
+
+    <footer>
+      <h2>Ressources</h2>
+      <div id="ressources">
+        <div class="lien">
+          <a href="https://www.altituderando.com" target="_blank">Altituderando</a>
+        </div>
+        <div class="lien">
+          <a href="https://www.visorando.com" target="_blank">Visorando</a>
+        </div>
+        <div class="lien">
+          <a href="https://randos.info" target="_blank">Randos.info</a>
+        </div>
+        <div class="lien">
+          <a href="https://randonneessportives.over-blog.com" target="_blank">randonneessportives.over-blog</a>
+        </div>
+        <div class="lien">
+          <a href="https://www.fred-38.fr" target="_blank">Fred38</a>
+        </div>
+      </div>
+      <div id="copyright">
+        <span>yam@naka 2026</span>
+      </div>
+    </footer>
+
+    <!-- Bouton de retour haut -->
+    <button id="back-to-top" title="Retour en haut de page">↑</button>
+    
+
+
+    <script defer>
+      // Ajout de la carte OpenStreetMap
+      var carte = L.map('carteRealisees', {
+        dragging: true,
+        tap: false
+      }).setView([45.4561840, 6.6997560], 9);
+      L.tileLayer("https://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(carte);
+      // Gestionnaire d'événements tactiles personnalisé
+      carte.on('touchstart', function(e) {
+        if (e.touches.length === 1) {
+          e.preventDefault();
+        }
+      });
+      carte.on('touchmove', function(e) {
+        if (e.touches.length === 1) {
+          e.preventDefault();
+        }
+      });
+
+
+      // icone sur Montagne de Soulens
+      var myIcon = L.divIcon({className: 'div-icon-tresfacile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.8291871, 6.3717792], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Montagne de Soulens');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Montagne de Soulens 1839m');
+      marker.openPopup();
+
+      // icone sur Roche Parstire
+      var myIcon = L.divIcon({className: 'div-icon-tresfacile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.6758218, 6.6006211], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Roche Parstire');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Roche Parstire 2109m');
+      marker.openPopup(); 
+
+      // icone sur Lac des Vaches
+      var myIcon = L.divIcon({className: 'div-icon-tresfacile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.3990198, 6.7785523], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Lac des Vaches');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Lac des Vaches 2320m');
+      marker.openPopup();
+
+      // icone sur Croix des Frêtes
+      var myIcon = L.divIcon({className: 'div-icon-tresfacile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.8514521, 6.4669145], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Croix des Frêtes');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Croix des Frêtes 1771m');
+      marker.openPopup();
+
+      // icone sur Lac du Mont Charvin
+      var myIcon = L.divIcon({className: 'div-icon-facile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.8083083, 6.4228068], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Lac du Mont Charvin');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Lac du Mont Charvin 2100m');
+      marker.openPopup();
+
+      // icone sur Mont Jovet
+      var myIcon = L.divIcon({className: 'div-icon-facile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.4947375, 6.6392951], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Mont Jovet');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Mont Jovet 2558m');
+      marker.openPopup();
+
+      // icone sur Roc du Tambour
+      var myIcon = L.divIcon({className: 'div-icon-facile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.360558,6.731370], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Roc du Tambour');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Roc du Tambour 2636m');
+      marker.openPopup();
+
+      // icone sur Rocher du Vent
+      var myIcon = L.divIcon({className: 'div-icon-facile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.7048786, 6.6702671], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Rocher du Vent');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Rocher du Vent 2360m');
+      marker.openPopup();
+
+      // icone sur Pointe du Riondet
+      var myIcon = L.divIcon({className: 'div-icon-moyenfacile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.6199707, 6.5624544], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Pointe du Riondet');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Pointe du Riondet 2357m');
+      marker.openPopup();
+
+      // icone sur Aiguille Croche et Mont Joly
+      var myIcon = L.divIcon({className: 'div-icon-moyenfacile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.8259882, 6.6929854], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Aiguille Croche et Mont Joly');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Aiguille Croche 2487m et Mont Joly 2525m');
+      marker.openPopup(); 
+
+      // icone sur Crêt du Bœuf
+      var myIcon = L.divIcon({className: 'div-icon-moyenfacile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.6093854, 6.5896744], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Crêt du Bœuf');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Crêt du Bœuf 2384m');
+      marker.openPopup(); 
+
+      // icone sur Col du Loup
+      var myIcon = L.divIcon({className: 'div-icon-moyenfacile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.1737798, 5.9480047], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Col du Loup');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Col du Loup 2380m');
+      marker.openPopup();
+
+      // icone sur Col du Sambuis
+      var myIcon = L.divIcon({className: 'div-icon-moyen', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.2619700, 6.1493330], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Col du Sambuis');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Col du Sambuis 2525m');
+      marker.openPopup();
+
+      // icone sur Dent de Crolles 2062m
+      var myIcon = L.divIcon({className: 'div-icon-moyen', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.3082229, 5.8555566], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Dent de Crolles');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Dent de Crolles 2062m');
+      marker.openPopup();
+
+      // icone sur La Tournette 
+      var myIcon = L.divIcon({className: 'div-icon-moyen', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.8270873, 6.2861465], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('La Tournette');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('La Tournette 2351m');
+      marker.openPopup();
+
+      // icone sur Cheval Noir
+      var myIcon = L.divIcon({className: 'div-icon-moyen', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.4219438, 6.4136811], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Cheval Noir ');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Cheval Noir 2832m');
+      marker.openPopup();
+
+      // icone sur Pointe de l’Observatoire
+      var myIcon = L.divIcon({className: 'div-icon-moyen', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.2908908, 6.6851397], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Pointe de l’Observatoire');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Pointe de l’Observatoire 3016m');
+      marker.openPopup();
+      
+      // icone sur Pointe de la Vallaisonnay
+      var myIcon = L.divIcon({className: 'div-icon-dur', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.4578547, 6.8176505], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Pointe de la Vallaisonnay');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Pointe de la Vallaisonnay 3020m');
+      marker.openPopup();
+
+      // icone sur Aiguille de la Grande Sassière
+      var myIcon = L.divIcon({className: 'div-icon-tresdur', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.5049936, 6.99984197], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Aiguille de la Grande Sassière');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Aiguille de la Grande Sassière 3747m');
+      marker.openPopup();
+
+    </script>
+    
+
+
+  </body>
