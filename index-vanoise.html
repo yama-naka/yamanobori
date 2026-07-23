@@ -876,6 +876,38 @@
       mapopup.setContent('Rocher de Plassa 2836m');
       marker.openPopup();
 
+      // icone sur Grand Roc 
+      var myIcon = L.divIcon({className: 'div-icon-dur', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.2653870, 6.6882491], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Greand Roc');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Grand Roc 3316m');
+      marker.openPopup();
+
+      // icone sur Roche Chevrière 
+      var myIcon = L.divIcon({className: 'div-icon-dur', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.2935725, 6.7219924], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Roche Chevrière');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Roche Chevrière 3280m');
+      marker.openPopup();
+
+      // icone sur Rateau d’Aussois
+      var myIcon = L.divIcon({className: 'div-icon-moyen', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.2463525, 6.6938877], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Rateau d’Aussois');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Rateau d’Aussois 3128m');
+      marker.openPopup();
+
+      // icone sur Tête de Chavière 
+      var myIcon = L.divIcon({className: 'div-icon-moyen', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.2709030, 6.6533007], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Tête de Chavière');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Tête de Chavière 2992m');
+      marker.openPopup();
+      
     </script>
     
 
