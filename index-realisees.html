@@ -255,6 +255,38 @@
       mapopup.setContent('Aiguille de la Grande Sassière 3747m');
       marker.openPopup();
 
+      // icone sur Grand Roc
+      var myIcon = L.divIcon({className: 'div-icon-dur', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.26538, 6.68826], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Grand Roc');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Grand Roc 3316m');
+      marker.openPopup();
+
+      // icone sur Basse du Gerbier
+      var myIcon = L.divIcon({className: 'div-icon-tresfacile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.13932, 6.33043], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Basse du Gerbier');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Basse du Gerbier 2581m');
+      marker.openPopup();
+
+      // icone sur Glacier de Saint-Sorlin
+      var myIcon = L.divIcon({className: 'div-icon-moyen', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.16994, 6.16396], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Glacier de Saint-Sorlin');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Glacier de Saint-Sorlin 2700m');
+      marker.openPopup();
+
+      // icone sur Mont Charvin
+      var myIcon = L.divIcon({className: 'div-icon-tresfacile', iconSize: [30, 42], iconAnchor: [15, 22]});
+      var marker = L.marker([45.21762, 6.28459], {icon: myIcon}).addTo(carte);
+      marker.bindPopup('Mont Charvin');
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Mont Charvin 2207m');
+      marker.openPopup();
+      
     </script>
     
 
